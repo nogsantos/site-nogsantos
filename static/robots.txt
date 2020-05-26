@@ -1,0 +1,3 @@
+Sitemap: https://fabricionogueira.me/sitemap.xml
+
+User-agent: *

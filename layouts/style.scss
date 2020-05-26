@@ -1,0 +1,12 @@
+.layout {
+  min-height: 100vh;
+
+  &__header {
+    min-height: 19vh;
+    margin-bottom: 2rem;
+  }
+
+  &__content {
+    min-height: 70vh;
+  }
+}

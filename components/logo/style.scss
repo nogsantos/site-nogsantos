@@ -1,0 +1,19 @@
+@use '../../assets/scss/helpers/extensions';
+
+.app-logo {
+  animation: 1s appear;
+  margin: auto;
+  border-radius: 100%;
+  width: 7rem;
+
+  @extend %z-depth-1;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

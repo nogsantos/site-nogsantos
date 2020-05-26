@@ -1,0 +1,37 @@
+@import '../../assets/scss/abstract/colors';
+@import '../../assets/scss/abstract/variables';
+
+.nav {
+  border-top: color('grey', 'darken-3') 15px solid;
+  background-color: color('grey', 'lighten-2');
+  width: 100%;
+
+  &__menu {
+    @media (min-width: 578px) {
+      ul {
+        align-items: center;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        list-style: none;
+        order: 2;
+        width: 100%;
+      }
+    }
+
+    &__item {
+      padding: 1rem;
+      text-align: center;
+
+      &--link {
+        color: color('grey', 'darken-2');
+        text-decoration: none;
+
+        &:hover {
+          color: color('grey', 'darken-3');
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

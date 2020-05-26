@@ -1,0 +1,10 @@
+// Screen size
+$xsmall-screen: 575px !default;
+$small-screen: 576px !default;
+$mid-screen: 768px !default;
+$large-screen: 992px !default;
+$xlarge-screen: 1200px !default;
+$xxlarge-screen: 1600px !default;
+$range: $large-screen - $small-screen !default;
+$intervals: 20 !default;
+$interval-size: $range / $intervals !default;
