@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Contact from '@/pages/contact';
+import Contact from '@/pages/contact/index.vue';
 
 describe('Page - Contact', () => {
   describe('Initial state', () => {

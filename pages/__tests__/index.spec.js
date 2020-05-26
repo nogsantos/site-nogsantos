@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import Index from '@/pages/';
+import Index from '@/pages/index.vue';
 
 describe('Page - Index', () => {
   describe('Initial state', () => {

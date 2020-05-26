@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { Footer } from '@/components/';
+import { Footer } from '@/components/index';
 
 describe('Component - Footer', () => {
   describe('Initial state', () => {

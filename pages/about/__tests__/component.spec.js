@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import About from '@/pages/about';
+import About from '@/pages/about/index.vue';
 
 describe('Page - About', () => {
   describe('Initial state', () => {

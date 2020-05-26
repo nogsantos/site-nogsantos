@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils';
-import About from '@/pages/about';
+import Posts from '@/pages/posts/index.vue';
 
-describe('Page - About', () => {
+describe('Page - Posts', () => {
   describe('Initial state', () => {
     it('should be a Vue instance', () => {
-      const wrapper = mount(About);
+      const wrapper = mount(Posts);
       expect(wrapper.isVueInstance()).toBeTruthy();
     });
   });

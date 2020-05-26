@@ -19,7 +19,7 @@ import posts from '@/contents/posts';
     };
   }
 })
-export default class Post extends Vue {
+export default class Posts extends Vue {
   posts: Array<String> = [];
 
   async asyncImport(post: String) {

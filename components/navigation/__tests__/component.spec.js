@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import { Navigation } from '@/components/';
+import { Navigation } from '@/components/index';
 
 describe('Component - Navigation', () => {
   describe('Initial state', () => {
