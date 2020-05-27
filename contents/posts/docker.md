@@ -1,6 +1,6 @@
 ---
 slug: 'docker'
-title: Docker, containers imagens e rede
+title: Docker containers, imagens e rede
 tags: 
   - Docker
   - Containers
