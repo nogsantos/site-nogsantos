@@ -1,4 +1,5 @@
 export default [
+  'puppet',
   'docker',
   'fedora',
   'git',
