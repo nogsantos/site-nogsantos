@@ -114,7 +114,8 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv',
     'nuxt-sass-resources-loader',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    'nuxt-helmet'
   ],
 
   sitemap: {
@@ -126,6 +127,22 @@ export default {
 
   markdownit: {
     injected: true
+  },
+
+  /*
+   ** Security with HTTP headers
+   ** See https://helmetjs.github.io/
+   */
+  helmet: {
+    dnsPrefetchControl: true,
+    frameguard: true,
+    hidePoweredBy: true,
+    hsts: true,
+    ieNoOpen: true,
+    noSniff: true,
+    permittedCrossDomainPolicies: true,
+    referrerPolicy: true,
+    xssFilter: true
   },
 
   /*

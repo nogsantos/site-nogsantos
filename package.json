@@ -20,6 +20,7 @@
     "@nuxtjs/sitemap": "^2.3.0",
     "@primer/css": "^14.4.0",
     "nuxt": "^2.0.0",
+    "nuxt-helmet": "^1.2.3",
     "nuxt-property-decorator": "^2.7.2",
     "vue-property-decorator": "^8.4.2",
     "vuex-class": "^0.3.2"
