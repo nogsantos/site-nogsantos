@@ -1,1 +1,7 @@
-export default ['miamono'];
+export default [];
+
+/**
+ * Disabled
+ */
+
+// 'miamono'

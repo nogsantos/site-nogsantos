@@ -1,12 +1,10 @@
 ---
-slug: 'devtools'
-title: Some devtools tricks
+slug: 'sample'
+title: Some
 tags: 
-  - JavaScript
-  - Chrome
-  - Devtools
+  - tag
 excerpt: |
-  About devtools racks.
+  About
 ---
 
 # Header 1

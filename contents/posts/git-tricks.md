@@ -32,19 +32,19 @@ To apply some of commits in current branch.
 ##### Single
 
 ```bash
-git cherry-pick &lt;hash&gt;
+git cherry-pick <hash>
 ```
 
 ##### List of
 
 ```bash
-git cherry-pick &lt;first-hash&gt; &lt;second-hash&gt; &lt;third-hash&gt;
+git cherry-pick <first-hash> <second-hash> <third-hash>
 ```
 
 ##### Sequential range of
 
 ```bash
-git cherry-pick &lt;first-hash&gt;..&lt;last-hash&gt;
+git cherry-pick <first-hash>..<last-hash>
 ```
 
 #### Logs
