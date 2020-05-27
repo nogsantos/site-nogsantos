@@ -2,6 +2,9 @@ import projects from './contents/projects';
 import posts from './contents/posts';
 import snippets from './contents/snippets';
 
+const IMAGE =
+  'https://res.cloudinary.com/nogsantos/image/upload/v1590550842/avatar/avatar-professional.png';
+
 export default {
   mode: 'universal',
   generate: {
@@ -31,6 +34,36 @@ export default {
       {
         hid: 'description',
         name: 'description',
+        content: process.env.npm_package_description || ''
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: IMAGE
+      },
+      {
+        hid: 'og:url',
+        name: 'og:url',
+        content: 'https://fabricionogueira.me/'
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: process.env.npm_package_description || ''
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: IMAGE
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: process.env.npm_package_name || ''
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
         content: process.env.npm_package_description || ''
       },
       {
