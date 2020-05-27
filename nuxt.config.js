@@ -17,6 +17,13 @@ export default {
    */
   head: {
     title: process.env.npm_package_name || '',
+    htmlAttrs: {
+      lang: 'pt-br',
+      amp: true
+    },
+    metaInfo: {
+      noscript: [{ innerHTML: 'This website requires JavaScript.' }]
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'robots', content: 'index, follow' },
@@ -25,6 +32,16 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        hid: 'twitter:site',
+        name: 'twitter:site',
+        content: '@nogsantos'
+      },
+      {
+        hid: 'twitter:creator',
+        name: 'twitter:creator',
+        content: '@nogsantos'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]

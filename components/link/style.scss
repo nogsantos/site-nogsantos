@@ -1,5 +1,7 @@
+@use '../../assets/scss/abstract/colors';
+
 .link {
-  // color: $primary;
+  color: color('blue', 'base');
   display: inline-block;
   padding: 0.5rem 1rem 0.5rem 0;
   position: relative;
@@ -12,7 +14,7 @@
     top: 0.2rem;
   }
 
-  // &--negative {
-  //   color: $white;
-  // }
+  &--negative {
+    color: color('shades', 'white');
+  }
 }

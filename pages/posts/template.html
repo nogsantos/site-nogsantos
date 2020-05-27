@@ -2,11 +2,16 @@
   <div class="Subhead">
     <div class="Subhead-heading">Posts</div>
   </div>
-  <div class="d-flex flex-column flex-md-row">
-    <div class="p-5" v-for="post in posts">
-        <p class="h1">{{ post.title }}</p>
-        <p class="lead">{{ post.excerpt }}</p>
-        <fn-link :to="`/posts/${post.slug}/`">Leia mais</fn-link>
-      </div>
+  <div
+    class="col-sm-12 col-md-12 col-lg-12 p-5"
+    v-for="(post, index) in posts"
+    :class="{ 'border-top' : index !== 0 }"
+    :key="index"
+  >
+    <p class="h1">{{ post.title }}</p>
+    <p class="lead pt-3">
+      {{ post.excerpt }}
+    </p>
+    <fn-link :to="`/posts/${post.slug}/`">Leia mais</fn-link>
   </div>
 </div>

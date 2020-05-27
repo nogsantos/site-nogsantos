@@ -19,8 +19,18 @@ export default class PortfolioItem extends Vue {
       title: `Fabricio Nogueira - Post - ${this.name}`,
       meta: [
         {
-          hid: 'description',
-          name: 'description',
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.excerpt
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.tags.join(',')
+        },
+        {
+          hid: 'twitter:card',
+          name: 'twitter:card',
           content: this.excerpt
         }
       ]

@@ -8,7 +8,7 @@ class Index extends Vue {
 
   head() {
     return {
-      title: `${this.title} - Home`
+      title: `${this.title}`
     };
   }
 
