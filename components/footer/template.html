@@ -1,3 +1,18 @@
 <footer class="footer border-top p-3">
-  &copy; {{ today }} Fabricio Nogueira.
+  <div class="d-flex flex-justify-between">
+    <div>
+      &copy; {{ today }} Fabricio Nogueira.
+    </div>
+    <div>
+      <link-image
+        v-for="(icon, index) in iconsList"
+        class="mr-3"
+        :key="index"
+        :link="icon.link"
+        :imagePath="icon.imagePath"
+        :imageMeta="icon.imageMeta"
+        :imageSize="icon.imageSize"
+      ></link-image>
+    </div>
+  </div>
 </footer>

@@ -6,10 +6,6 @@ import { Logo } from '@/components/';
     'fn-logo': Logo
   }
 })
-class Navigation extends Vue {
-  get today(): Number {
-    return new Date().getFullYear();
-  }
-}
+class Navigation extends Vue {}
 
 export default Navigation;
