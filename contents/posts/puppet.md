@@ -9,7 +9,7 @@ excerpt: |
   Puppet é uma ferramenta e plataforma Open Source para automação e gerenciamento de configuração de servidores e infraestrutura
 ---
 
-Resumo da apostila [Puppet-BR](https://github.com/puppet-br/apostila-puppet)
+Essa página é um resumo da apostila [Puppet-BR](https://github.com/puppet-br/apostila-puppet), abordando a questão de instação e configurações básicas.
 
 ## Instalação e configuração do ambiente de desenvolvimento
 
@@ -50,15 +50,17 @@ vi /etc/sysconfig/puppetserver
 Alterar a linha com o parâmetro `JAVA_ARGS` as propriedades `Xms` e `Xmx` para valores menores do padrão, de `g` para `m`, como no exemplo:
 
 ```bash
-JAVA_ARGS="-Xms512m -Xmx512m ..."
+JAVA_ARGS="-Xms256m -Xmx512m ..."
 ```
+
+Com esta configuração será alocado 512 MB para uso da JVM usada pelo Puppet Server. Por padrão, são alocados 2 GB de memória.
 
 Após a configuração:
 
-- inicializar o puppetserver
+- inicializar e definir na inicialização do sistema
 
 ```bash
-systemctl start puppetserver.service
+puppet resource service puppetserver ensure=running enable=true
 ```
 
 - visualizar o status
@@ -67,11 +69,19 @@ systemctl start puppetserver.service
 systemctl status puppetserver.service -l
 ```
 
-- definir na inicialização do sistema
+- Desabilitando o firewall, no ambiente de desenvolvimento, não é necessário
 
 ```bash
-systemctl enable puppetserver.service
+puppet resource service firewalld ensure=stopped
 ```
+
+> Gerar um certificado no server
+>
+> ```bash
+> puppet cert generate <hostname-fqdn>
+> 
+> # Consulta ao fqdn: hostname --fqdn
+>```
 
 Gerar o link para desenvolvimento e execução dos fatos. Mapeando o host com a máquina virtual
 
@@ -81,11 +91,37 @@ ln -s /vagrant/control-repo production
 ```
 > Certifique-se de que, o diretório do control-repo está compartilhado dentro do diretório do vagrant
 
-### Na máquina cliente/agent (node)
+Para que seja possível a comunicação dos clientes com o master, a porta 8140/TCP deve estar liberada e disponível
 
-Instalação e configuração puppet-agent
+- verificar a porta no master
+
+```bash
+netstat -na | grep 8140 
+# Out
+tcp6       0      0 :::8140                 :::*                    LISTEN
+```
+
+### Instalação e configuração puppet-agent na máquina cliente (node) 
+
+Definir o hostname para identificação no master. A resolução de nomes dos agentes via DNS, não é requisito para o funcionamento do Puppet, mas é considerada como uma boa prática.
+
+> Para resolução de nomes, configure corretamente o arquivo `/etc/resolv.conf` com os parâmetros: `nameserver`, `domain` e `search`. Esses parâmetros devem conter a informação do(s) servidor(es) DNS e do domínio de sua rede. O arquivo `/etc/hosts` deve possuir pelo menos o nome do próprio host em que o agente está instalado. Neste arquivo deve existir uma entrada que informe o seu IP, FQDN e depois o hostname. 
+>
+> Exemplo: 192.168.1.10 node1.domain.com.br node1. 
+>
+>No Debian/Ubuntu, o hostname é cadastrado no arquivo /etc/hostname. No CentOS/Red Hat, o hostname /etc/sysconfig/network. é cadastrado na variável HOSTNAME do arquivo
+>
+> _Fonte: Puppet-BR apostila Puppet_
 
 **Adicionar endereço do puppet server aos hosts**
+
+> O único requisito de fato é que o host consiga resolver o nome do servidor Puppet Master. Por padrão, o agente vai usar o FQDN do host como o CN-Common Name para indentificá-lo durante a criação do certificado SSL. Entretanto, é possível usar o Puppet em situações que seja necessário que o CN do certificado não possua nenhuma relação com o DNS.
+
+**Visualizar a configuração de nome e domínio do sistema operacional**
+
+```bash
+echo "$(hostname) >> $(hostname --fqdn) >> $(hostname --domain)" 
+```
 
 ```bash
 vi /etc/hosts
@@ -114,19 +150,36 @@ yum install -y puppet-agent
 
 Com o agente instalado, é possivel realizar as configurações utilizando o `puppet resource`
 
-- Desabilitando o firewall
+- Desabilitando o firewall, no ambiente de desenvolvimento, não é necessário
 
 ```bash
-puppet resource service firewall ensure=stopped
+puppet resource service firewalld ensure=stopped
 ```
 
-- Definindo o puppet na inicializacao
+- Iniciar o agente do Puppet como serviço e habilitá-lo para ser executado após o boot do sistema operacional
 
 ```bash
 puppet resource service puppet ensure=running enable=true
 ```
 
+> Em um host em que o agente está instalado, precisamos configurá-lo para que ele saiba quem é o Master.
+> No arquivo /etc/puppetlabs/puppet/puppet.conf, adicione as linhas:
+>
+> ```bash
+> [main]
+> certname = <hostname.certname>
+> server = <master.hostname.fqdn>
+> environment = production
+> 
+> [agent]
+> report = true 
+> ```
+
 ### Certificados
+
+As conexões entre agente e servidor Puppet são realizadas usando o protocolo SSL e, através de certificados, ambos se validam.
+
+Um servidor Master do Puppet é um CA (Certificate Authority) e implementa diversas funcionalidades como gerar, assinar, revogar e remover certificados para os agentes.
 
 Para que o master se comunique com o nó, é necessário realizar as assinaturas dos certificados:
 
@@ -159,6 +212,48 @@ Para aplicar o catalogo, no cliente
 
 ```bash
 puppet agent -t
+```
+
+### Removendo um certificado 
+
+- No master, remover o certificado
+
+```bash
+puppet cert clean <CERTNAME> 
+```
+
+- No cliente, parar os agentes
+
+```bash
+puppet resource service puppet ensure=stopped
+puppet resource service mcollective ensure=stopped
+puppet resource service pxp-agent ensure=stopped
+```
+
+- No cliente, deleter o diretório SSL
+
+```bash
+rm -rf /etc/puppetlabs/puppet/ssl
+```
+
+- No cliente, remover o cache do catalogo
+
+```bash
+rm -f /opt/puppetlabs/puppet/cache/client_data/catalog/<CERTNAME>.json 
+```
+
+- No cliente, reiniciar os serviços do agent e mcolective
+
+```bash
+puppet resource service puppet ensure=running
+puppet resource service mcollective ensure=running
+```
+
+- No master, assinar o certificado novamente
+
+```bash
+puppet cert list --all
+puppet cert sign <NAME> 
 ```
 
 ## Comandos
@@ -453,7 +548,35 @@ Out
 }
 ```
 
-Para definir a saída, pode se utilizar os argumentos `--json` ou `yaml` ex.: `facter os --yaml`
+> Para definir a saída, pode se utilizar os argumentos `--json` ou `yaml` ex.: `facter os --yaml`
+
+## Nodes
+
+O Puppet começa a compilação da configuração de um catálogo pelo arquivo `/etc/puppetlabs/code/environments/production/manifests/site.pp`. O site.pp é o ponto de entrada do master para identificar a configuração que será enviada a um agente.
+
+Por padrão, o nome do agente é o valor de certname presente no certificado de um agente (por padrão, o FQDN).
+
+Caso o Puppet Master não encontre nenhuma declaração de node explícita para um agente, em última instância pode-se criar um node simplesmente chamado default, que casará apenas para os agentes que não encontraram uma definição de node.
+
+Ex.:
+
+```bash
+node default {
+  package { 'vim':
+    ensure => present
+  }
+} 
+```
+
+Para validar/simular alterações no host cliente, utilize o `--noop`
+
+```bash
+puppet agent -t --noop 
+```
+
+## Monitoramento
+
+Quando o nó cliente ativa a o envio de relatório, na configuração,  `report = true ` os logs gerados no master podem ser localizados em `/var/log/puppetlabs/puppetserver/puppetserver.log`
 
 ----
 
