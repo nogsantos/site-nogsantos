@@ -1,29 +1,31 @@
-name: Deploy Website
+name: FeatureCI
 
 on:
   push:
     branches:
-      - master
+      - '*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build and Deploy
+    name: Build 
     steps:
       - uses: actions/checkout@master
+
       - name: Install
         uses: actions/setup-node@v1
         with:
           node-version: 8
       - run: npm i
-      - name: Build
+
+      - name: Lint
         uses: actions/setup-node@v1
         with:
           node-version: 8
-      - run: npm run generate
-      - name: Install surge and fire deployment
+      - run: npm run lint
+
+      - name: Test
         uses: actions/setup-node@v1
         with:
           node-version: 8
-      - run: npm install -g surge
-      - run: surge ./dist/ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+      - run: npm run test
