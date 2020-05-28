@@ -1,10 +1,10 @@
 import { mount } from '@vue/test-utils';
-import { Footer } from '@/components/index';
+import Navigation from '@/components/navigation/index.vue';
 
-describe('Component - Footer', () => {
+describe('Component - Navigation', () => {
   describe('Initial state', () => {
     it('should be a Vue instance', () => {
-      const wrapper = mount(Footer);
+      const wrapper = mount(Navigation);
       expect(wrapper.isVueInstance()).toBeTruthy();
     });
   });
