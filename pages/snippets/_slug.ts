@@ -1,12 +1,12 @@
 import { Vue, Component } from 'nuxt-property-decorator';
-import { Link } from '@/components/index';
+import { Content } from '@/components/index';
 
 @Component({
   components: {
-    'fn-link': Link
+    'fn-content': Content
   }
 })
-export default class PortfolioItem extends Vue {
+export default class SnippetsSlug extends Vue {
   params: any = '';
   name: String = '';
   title: String = '';
@@ -16,7 +16,7 @@ export default class PortfolioItem extends Vue {
 
   head() {
     return {
-      title: `Fabricio Nogueira - Snippets - ${this.name}`,
+      title: `Snippet - Fabricio Nogueira | ${this.name}`,
       meta: [
         {
           hid: 'og:title',

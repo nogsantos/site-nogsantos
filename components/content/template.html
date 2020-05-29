@@ -1,0 +1,20 @@
+<div class="container-lg clearfix">
+  <div class="Subhead">
+    <div class="Subhead-heading">{{ title }}</div>
+    <div v-if="excerpt" class="Subhead-description">
+      {{ excerpt }}
+    </div>
+  </div>
+  <div class="tags" v-if="tags.length > 0">
+    <ul>
+      <li v-for="(tag, index) in tags" :key="index+tag">
+        <span :title="tag" class="Label--outline p-1">
+          {{ tag }}
+        </span>
+      </li>
+    </ul>
+  </div>
+  <div class="markdown-body">
+    <div v-html="content"></div>
+  </div>
+</div>

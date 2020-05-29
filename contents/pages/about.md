@@ -13,11 +13,11 @@ Bacharelado em ciências da computação.
 
 ### Histórico profissional
 
-#### » Full Stack Developer
+#### » Programador de sistemas
 
 Instruct - Remoto <small><a href="http://instruct.com.br/" target="_blank" rel="noopener noreferrer">[www.instruct.com.br/]</a></small>
 
-Implementações de novas features, atualizações e manutenção de features existentes.
+Como programador, na equipe em que trabalho, temos a responsabilidade de desenvolver novos recursos, além de mantermos os sistemas comercializados pela empresa, trabalhando nas atividades de front-end e back-end e em alguns casos, na automação da infraestrutura do cliente.
 
 <table>
   <thead>
@@ -29,7 +29,7 @@ Implementações de novas features, atualizações e manutenção de features ex
   </thead>
   <tbody>
     <tr>
-      <td align="left"><em>Javascript</em></td>
+      <td align="left"><em>Vanilla JS</em></td>
       <td align="left"><em>Python</em></td>
       <td align="left"><em>PostgreSQL</em></td>
     </tr>
@@ -45,22 +45,22 @@ Implementações de novas features, atualizações e manutenção de features ex
     </tr>
     <tr>
       <td align="left"><em>VueJS</em></td>
-      <td align="left"><em>NodeJs</em></td>
+      <td align="left"><em>Graphene</em></td>
       <td align="left"></td>
     </tr>
     <tr>
       <td align="left"><em>Ant Design</em></td>
-      <td align="left"></td>
+      <td align="left">Nameko</td>
       <td align="left"></td>
     </tr>
   </tbody>
 </table>
 
-#### » Full Stack Engineer
+#### » Engenheiro de software
 
 Treasy Planejamento e controladoria - Joinville - SC <small><a href="https://www.treasy.com.br/" target="_blank" rel="noopener noreferrer">[www.treasy.com.br]</a></small>
 
-Desenvolvimento e manutenção de um sistema SaaS. Sistema voltado para controladoria e planejamento de empresas.
+Meu time era responsável pela engenharia, manutenção e migração da arquitetura do sistema (SaaS), até então desenvolvido em uma arquitetura monolítica, para uma abordagem de arquitetura em micro-serviços visando melhorias na escalabilidade, disponibilidade e estabilidade da aplicação.
 
 <table>
   <thead>
@@ -72,7 +72,7 @@ Desenvolvimento e manutenção de um sistema SaaS. Sistema voltado para controla
   </thead>
   <tbody>
     <tr>
-      <td align="left"><em>Javascript</em></td>
+      <td align="left"><em>Vanilla JS</em></td>
       <td align="left"><em>Java 8</em></td>
       <td align="left"><em>MySQL</em></td>
     </tr>
@@ -108,9 +108,8 @@ Desenvolvimento e manutenção de um sistema SaaS. Sistema voltado para controla
 
 Universidade Federal de Goiás - Goiânia - GO <small><a href="http://cercomp.ufg.br" target="_blank" rel="noopener noreferrer">[www.cercomp.ufg.br]</a></small>
 
-Integrante da equipe de migração e implantação do novo sistemas da Universidade Federal de Goiás (SIGAA), especificamente do módulo de Extensão e Cultura. Manutenção e melhorias no sistema da <a href="http://proec.ufg.br/" target="_blank" rel="noopener noreferrer">Pró-Reitoria de Extensão e cultura</a> (SIEC), sistema responsável pelo controle, cadastro e aprovação de editais e propostas de extensão e cultura realizados pela Universidade.
-
-Análise e implementação do aplicativo para Android (Siec móvel), que integrado ao sistema, controla o acesso, afere a presença dos participantes nos eventos e integrado a um serviço, sincroniza as informações coletadas com a base de dados do sistema.
+Minha equipe era responsável pela arquitetura e manutenção do Sistema de Informação da <a href="http://proec.ufg.br/" target="_blank" rel="noopener noreferrer">Pró-Reitoria de Extensão e cultura</a> da universidade, sistemas web e aplicativo móvel. Trabalhávamos também em manutenções e correções nos sistemas legados da universidade.
+Um dos principais projetos, além dos citados anteriormente, foi o de migração dos sistemas legados para a nova estrutura do SIGAA.
 
 <table>
   <thead>
@@ -123,7 +122,7 @@ Análise e implementação do aplicativo para Android (Siec móvel), que integra
   </thead>
   <tbody>
     <tr>
-      <td align="left"><em>Javascript</em></td>
+      <td align="left"><em>Vanilla JS</em></td>
       <td align="left"><em>Java 8</em></td>
       <td align="left"><em>Android nativo</em></td>
       <td align="left"><em>PostgreSQL</em></td>
@@ -177,8 +176,11 @@ Análise e implementação do aplicativo para Android (Siec móvel), que integra
 
 Interagi Tecnologia - Goiânia - GO <small><a href="http://interagi.com.br" target="_blank" rel="noopener noreferrer">[www.interagi.com.br]</a></small>
 
-Coordenação do desenvolvimento e melhorias nos módulos de Locação e Manutenção de equipamentos, módulo pertencente ao sistema carro chefe comercializado pela empresa. O módulo é utilizado por grandes empresas nacionais do ramo de locação de geradores de energia e máquinas pesados como a Cummins SP. Coordenando uma equipe de 6 pessoas de diversas áreas como programadores, testadores, suporte técnico e designers, trabalhávamos nos requisitos levantados pelos gerentes e analistas de requisitos implementando as necessidades dos clientes nos sistemas em tempo hábil.</p>
-<p>Trabalhei também no desenvolvimento de sites e portais do Governo Federal entre eles CODEBA (Compania de Docas do Estado da Bahia). Em um time multidisciplinar para o projeto do COB (Comitê Olimpico Brasileiro) no desenvolvimento do portal das Olimpíadas dos estudantes na cidade do Rio de Janeiro.
+Fui coordenador de uma equipe multi-disciplinar. Desenvolvíamos e mantínhamos os sistemas comercializadas pela empresa.
+Nosso foco e atribuições eram as correções nos sistemas legados e as manutenção e implementação de novas funcionalidades. A equipe era composta por designers, testadores e programadores.
+
+Como estagiário, minha responsabilidade como programador foi no desenvolvimento de sites, portais e intranets.
+No time que trabalhei, uma das principais atribuições, era a de recebermos da equipe de designers o Mockup do que deveria ser desenvolvido, em formato PDF e transformá-lo em marcação e código Html, CSS e javascript.
 
 <table>
   <thead>
@@ -192,7 +194,7 @@ Coordenação do desenvolvimento e melhorias nos módulos de Locação e Manuten
   </thead>
   <tbody>
     <tr>
-      <td align="left"><em>Javascript</em></td>
+      <td align="left"><em>Vanilla JS</em></td>
       <td align="left"><em>Php5</em></td>
       <td align="left"><em>Android nativo</em></td>
       <td align="left"><em>PostgreSQL</em></td>
@@ -233,7 +235,9 @@ Coordenação do desenvolvimento e melhorias nos módulos de Locação e Manuten
 
 Integra engenharia de sistemas - Goiânia - GO <small><a href="http://integraengenharia.com.br" target="_blank" rel="noopener noreferrer">[www.integraengenharia.com.br]</a></small>
 
-Implantação e treinamento dos sistemas comercializados pela empresa. Desenvolvimento de pequenas funcionalidades no sistema ERP da empresa.
+Início da minha carreira como desenvolvedor, ainda como estagiário e uma fase como contratado, trabalhei basicamente como analista e técnico de Suporte.
+Como programador, desenvolvi e realização manutenção de pequenas features nos sistemas comercializados pela empresa desenvolvidos em Delphi.
+Como suporte técnico, realizei treinamento e acompanhamento de novos usuários e trabalhei na implantação, migração dos sistemas na infraestrutura do cliente, isso por se tratar de um sistema para Desktop.
 
 <table>
   <thead>
@@ -255,7 +259,7 @@ Implantação e treinamento dos sistemas comercializados pela empresa. Desenvolv
       <td align="left"></td>
     </tr>
     <tr>
-      <td align="left">Javascript</td>
+      <td align="left">Vanilla JS</td>
       <td align="left"></td>
       <td align="left"></td>
     </tr>

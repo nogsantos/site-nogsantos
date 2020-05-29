@@ -1,22 +1,6 @@
-<div class="container-lg clearfix">
-  <div class="Subhead">
-    <div class="Subhead-heading">Projetos</div>
-  </div>
-  <div v-if="projects.length > 0">
-    <div
-      class="col-sm-12 col-md-12 col-lg-12 p-5"
-      v-for="(project, index) in projects"
-      :class="{ 'border-top' : index !== 0 }"
-      :key="index"
-    >
-      <p class="h1">{{ project.title }}</p>
-      <p class="lead pt-3">
-        {{ project.excerpt }}
-      </p>
-      <fn-link :to="`/projects/${project.slug}/`">Leia mais</fn-link>
-    </div>
-  </div>
-  <div v-else class="col-sm-12 col-md-12 col-lg-12 p-5">
-    Nenhum conteúdo disponível no momento
-  </div>
-</div>
+<fn-cover
+  title="Projetos"
+  link="projects"
+  :items="projects"
+  :loading="loading"
+></fn-cover>

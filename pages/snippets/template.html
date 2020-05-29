@@ -1,17 +1,6 @@
-<div class="container-lg clearfix">
-  <div class="Subhead">
-    <div class="Subhead-heading">Snippets</div>
-  </div>
-  <div
-    class="col-sm-12 col-md-12 col-lg-12 p-5"
-    v-for="(snippet, index) in snippets"
-    :class="{ 'border-top' : index !== 0 }"
-    :key="index"
-  >
-    <p class="h1">{{ snippet.title }}</p>
-    <p class="lead pt-3">
-      {{ snippet.excerpt }}
-    </p>
-    <fn-link :to="`/snippets/${snippet.slug}/`">Leia mais</fn-link>
-  </div>
-</div>
+<fn-cover
+  title="Snippets"
+  link="snippets"
+  :items="snippets"
+  :loading="loading"
+></fn-cover>

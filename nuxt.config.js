@@ -87,14 +87,14 @@ export default {
    ** Global CSS
    */
   css: [
-    '@/assets/scss/main.scss',
     '@primer/css/support/index.scss',
-    '@primer/css/buttons/index.scss',
     '@primer/css/header/index.scss',
     '@primer/css/layout/index.scss',
     '@primer/css/subhead/index.scss',
     '@primer/css/markdown/index.scss',
-    '@primer/css/utilities/index.scss'
+    '@primer/css/utilities/index.scss',
+    '@primer/css/base/index.scss',
+    '@/assets/scss/main.scss'
   ],
   /*
    ** Plugins to load before mounting the App

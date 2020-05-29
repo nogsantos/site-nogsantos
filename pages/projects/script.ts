@@ -1,14 +1,14 @@
 import { Vue, Component } from 'nuxt-property-decorator';
-import { Link } from '@/components/';
+import { Cover } from '@/components/';
 import projects from '~/contents/projects';
 
 @Component({
   components: {
-    'fn-link': Link
+    'fn-cover': Cover
   },
   head() {
     return {
-      title: `Fabricio Nogueira - Projects`,
+      title: 'Projetos - Fabricio Nogueira',
       meta: [
         {
           hid: 'description',
@@ -21,6 +21,7 @@ import projects from '~/contents/projects';
 })
 export default class Projects extends Vue {
   projects: Array<String> = [];
+  loading: boolean = true;
 
   async asyncImport(project: String) {
     const content = await import(`~/contents/projects/${project}.md`);
@@ -30,8 +31,8 @@ export default class Projects extends Vue {
   async fetch() {
     return await Promise.all(
       projects.map((content) => this.asyncImport(content))
-    ).then((projects) => {
-      this.projects = projects;
-    });
+    )
+      .then((projects) => (this.projects = projects))
+      .finally(() => (this.loading = false));
   }
 }

@@ -1,20 +1,8 @@
-@use '../../assets/scss/abstract/colors';
-
 .link {
-  color: color('blue', 'base');
-  display: inline-block;
-  padding: 0.5rem 1rem 0.5rem 0;
-  position: relative;
-
   &::after {
-    content: '\203A';
-    font-size: 1.5rem;
-    position: absolute;
-    right: 0.2rem;
-    top: 0.2rem;
-  }
-
-  &--negative {
-    color: color('shades', 'white');
+    content: '\00BB';
+    font-size: 1.2rem;
+    position: relative;
+    left: 0.3rem;
   }
 }
