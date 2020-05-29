@@ -4,28 +4,19 @@ on:
   push:
     branches:
       - '*'
+      - '!master'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build 
+    name: Build
+
     steps:
       - uses: actions/checkout@master
 
-      - name: Install
+      - name: Bucket actions
         uses: actions/setup-node@v1
         with:
           node-version: 8
       - run: npm i
-
-      - name: Lint
-        uses: actions/setup-node@v1
-        with:
-          node-version: 8
-      - run: npm run lint
-
-      - name: Test
-        uses: actions/setup-node@v1
-        with:
-          node-version: 8
       - run: npm run test

@@ -7,38 +7,19 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
     name: Build and Deploy
+
     steps:
       - uses: actions/checkout@master
 
-      - name: Install
+      - name: Bucket actions
         uses: actions/setup-node@v1
         with:
           node-version: 8
       - run: npm i
-
-      - name: Lint
-        uses: actions/setup-node@v1
-        with:
-          node-version: 8
-      - run: npm run lint
-
-      - name: Test
-        uses: actions/setup-node@v1
-        with:
-          node-version: 8
       - run: npm run test
-
-      - name: Build
-        uses: actions/setup-node@v1
-        with:
-          node-version: 8
       - run: npm run generate
-
-      - name: Install surge and fire deployment
-        uses: actions/setup-node@v1
-        with:
-          node-version: 8
       - run: npm install -g surge
       - run: surge ./dist/ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
