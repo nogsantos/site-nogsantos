@@ -1,4 +1,5 @@
 export default [
+  'python-collections-enumerate',
   'linux-utils',
   'linux-files',
   'linux-cron',
