@@ -1,4 +1,5 @@
 export default [
+  'git-stash',
   'puppet',
   'docker',
   'fedora',
