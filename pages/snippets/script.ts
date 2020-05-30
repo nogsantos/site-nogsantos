@@ -1,6 +1,8 @@
-import { Vue, Component } from 'nuxt-property-decorator';
+import { Component } from 'nuxt-property-decorator';
 import { Cover } from '@/components/';
 import snippets from '~/contents/snippets';
+
+import Content from '@/pages/Classes/Content';
 
 @Component({
   components: {
@@ -8,7 +10,7 @@ import snippets from '~/contents/snippets';
   },
   head() {
     return {
-      title: 'Snippets - Fabricio Nogueira',
+      title: 'Fabricio Nogueira | Snippets',
       meta: [
         {
           hid: 'description',
@@ -19,20 +21,12 @@ import snippets from '~/contents/snippets';
     };
   }
 })
-export default class Snippets extends Vue {
-  snippets: Array<String> = [];
-  loading: boolean = true;
-
-  async asyncImport(snippet: String) {
-    const content = await import(`~/contents/snippets/${snippet}.md`);
-    return content.attributes;
-  }
-
+export default class Snippets extends Content {
   async fetch() {
     return await Promise.all(
-      snippets.map((content) => this.asyncImport(content))
+      snippets.map((content) => this.asyncImport('snippets', content))
     )
-      .then((snippets) => (this.snippets = snippets))
+      .then((snippets) => (this.contents = snippets))
       .finally(() => (this.loading = false));
   }
 }

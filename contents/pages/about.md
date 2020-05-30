@@ -1,6 +1,6 @@
 ---
 slug: 'about'
-title: Sobre mim
+title: Sobre
 ---
 
 ### Formação acadêmica

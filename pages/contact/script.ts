@@ -8,7 +8,7 @@ class Contact extends Vue {
 
   head() {
     return {
-      title: `${this.title} - Contatos`
+      title: `Fabricio Nogueira | ${this.title}`
     };
   }
 

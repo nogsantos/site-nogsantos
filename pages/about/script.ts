@@ -8,7 +8,7 @@ class About extends Vue {
 
   head() {
     return {
-      title: `${this.title} - About`
+      title: `Fabricio Nogueira | ${this.title}`
     };
   }
 
