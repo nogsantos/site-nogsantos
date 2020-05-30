@@ -1,12 +1,14 @@
 ---
 slug: 'scp-copy'
-title: SCP Transferir arquivos arquivos de forma segura
+title: 'Linux: Transferir arquivos arquivos de forma segura com scp'
 tags:
   - scp
   - Cópia
   - Arquivos
+  - Linux
+  - Fedora
 excerpt: |
-  Snippets, como copiar arquivos entre hosts de forma segura com SCP
+  Como copiar arquivos entre hosts de forma segura no linux com scp
 ---
 
 ### SCP: Secury copy 

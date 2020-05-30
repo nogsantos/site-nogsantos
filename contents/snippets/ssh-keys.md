@@ -1,14 +1,16 @@
 ---
 slug: 'ssh-keys'
-title: SSH Gerar chaves públicas e privadas
+title: 'Linux: Gerar chaves públicas e privadas com ssh'
 tags:
   - ssh
   - ssh-keygen
   - chave
   - pública
   - privada
+  - Linux
+  - Fedora
 excerpt: |
-  Snippets, como geração chaves públicas e privadas com ssh-keygen
+  Como gerar chaves públicas e privadas no linux com ssh-keygen
 ---
 
 ### SSH Chaves públicas e privadas

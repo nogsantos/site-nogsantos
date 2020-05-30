@@ -1,13 +1,13 @@
 ---
 slug: 'linux-files'
-title: Linux Manipulações de arquivos
+title: 'Linux: Manipulações de arquivos'
 tags:
   - Linux
   - arquivos
   - manipulações
   - Fedora
 excerpt: |
-  Snippets, como manipular arquivos no linux
+  Como manipular arquivos no linux
 ---
 
 ### Eliminar linhas em branco

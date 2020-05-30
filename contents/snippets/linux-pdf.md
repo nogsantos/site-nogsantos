@@ -1,13 +1,13 @@
 ---
 slug: 'linux-pdf'
-title: Linux Merge e compressão de PDFs
+title: 'Linux: Merge e compressão de PDFs'
 tags:
   - Linux
-  - PDF
   - Fedora
+  - PDF
   - Arquivos
 excerpt: |
-  Snippets, como realizar o merge e compressão de PDFs no Linux
+  Como realizar o merge e compressão de PDFs no Linux
 ---
 
 ### Merge com qpdf

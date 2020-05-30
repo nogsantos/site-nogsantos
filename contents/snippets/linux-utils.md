@@ -1,15 +1,15 @@
 ---
 slug: 'linux-utils'
-title: Linux Resumo de utilitários e utilidades
+title: 'Linux: Resumo de utilitários e utilidades'
 tags:
   - Linux
+  - Fedora
   - Utilidades
   - bash
   - command
   - Utilitários
-  - Fedora
 excerpt: |
-  Snippets, utilidades no Linux
+  Algumas utilidades no Linux
 ---
 
 ### Usuários

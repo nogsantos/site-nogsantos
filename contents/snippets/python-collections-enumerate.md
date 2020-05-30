@@ -1,14 +1,15 @@
 ---
 slug: 'python-collections-enumerate'
-title: PYTHON Enumerar coleções em uma iteração
+title: 'Python: Enumerar coleções em uma iteração'
 tags:
   - Programming
   - Python
+  - Python3
   - Collections
   - Enumerate
   - Built in
 excerpt: |
-  Enumere coleções em um iterador
+  Como enumerar coleções em um iterador no python
 ---
 
 Ao invés de utilizar o modo tradicional, utilizando a variável `count`. O Python possui um método built in, que além de facilitar o trabalho, oferece outras possibilidades, como informar o valor de inicio do contador.

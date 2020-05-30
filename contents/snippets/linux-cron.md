@@ -1,12 +1,12 @@
 ---
 slug: 'linux-cron'
-title: Linux Configurações crontab
+title: 'Linux: Configurações crontab'
 tags:
   - Linux
-  - crontab
   - Fedora
+  - crontab
 excerpt: |
-  Snippets, como configurar o crontab no linux
+  Como configurar o crontab no linux
 ---
 
 ### Configurar um agendamento

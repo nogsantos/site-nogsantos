@@ -1,11 +1,13 @@
 ---
 slug: 'vim-cp'
-title: Vim Colar textos sem perder a formatação
+title: 'Linux: Colar textos no vim sem perder a formatação'
 tags:
   - Vim
   - Editor
+  - Linux
+  - Fedora
 excerpt: |
-  Snippets, como colar um texto no vim sem perder a formatação ativando o paste mode
+  Como colar um texto no vim sem perder a formatação ativando o paste mode
 ---
 
 ### VIM: Copiar e colar facilmente
