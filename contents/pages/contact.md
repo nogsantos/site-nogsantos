@@ -7,10 +7,6 @@ title: Contato
 
 - nogsantos@gmail.com
 
-### Skype
-
-- @nogsantos
-
 ### Mídias sociais
 
 - Telegram: @nogsantos
