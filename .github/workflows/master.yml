@@ -7,7 +7,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     name: Build and Deploy
 
@@ -23,3 +22,13 @@ jobs:
       - run: npm run generate
       - run: npm install -g surge
       - run: surge ./dist/ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+
+      - name: Publish
+        uses: horochx/deploy-via-scp@master
+        with:
+          local: ./dist/*
+          remote: ${{ secrets.SCP_DIR }}
+          host: ${{ secrets.SCP_HOST }}
+          port: ${{ secrets.SCP_PORT }}
+          user: ${{ secrets.SCP_USER }}
+          key: ${{ secrets.SCP_KEY }}
