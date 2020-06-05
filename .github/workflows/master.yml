@@ -24,7 +24,7 @@ jobs:
       - run: surge ./dist/ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
 
       - name: Publish
-        uses: horochx/deploy-via-scp@master
+        uses: nogsantos/ssh-scp-deploy@v1.1.1
         with:
           local: ./dist/*
           remote: ${{ secrets.SCP_DIR }}
