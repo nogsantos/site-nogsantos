@@ -1,11 +1,21 @@
-import { mount } from '@vue/test-utils';
+import { shallowMount } from '@vue/test-utils';
 import About from '@/pages/about/index.vue';
 
 describe('Page - About', () => {
+  let wrapper;
+
+  beforeEach(() => {
+    wrapper = shallowMount(About);
+  });
+
   describe('Initial state', () => {
     it('should be a Vue instance', () => {
-      const wrapper = mount(About);
       expect(wrapper.isVueInstance()).toBeTruthy();
+    });
+
+    it('should render the page title', () => {
+      const title = wrapper.find('.Subhead-heading');
+      expect(title.text()).toBe('Sobre');
     });
   });
 });
