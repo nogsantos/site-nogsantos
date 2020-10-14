@@ -1,4 +1,5 @@
 export default [
+  'gitlab-ci-runner',
   'python-collections-enumerate',
   'linux-utils',
   'linux-files',
