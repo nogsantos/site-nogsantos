@@ -2,9 +2,8 @@
 slug: 'kubernetes'
 title: Introdução básica ao kubernetes
 tags: 
-  - Kuernetes
-  - ks8
-  - Comandos
+  - Kubernetes
+  - k8s
 excerpt: |
   Básico de gerenciamento kubernetes
 ---
