@@ -1,7 +1,7 @@
 ---
 slug: 'kubernetes'
 title: Introdução básica ao kubernetes
-tags: 
+tags:
   - Kubernetes
   - k8s
 excerpt: |
@@ -13,7 +13,7 @@ excerpt: |
 Para acessar o kubernetes remotamente, é necessário definir a configuração e credenciais de acesso pela variável `KUBECONFIG`. Para isso, deve ser gerado um arquivo de configuração:
 
 - `mkdir -p $HOME/.kube`: Caso não exista, criar o diretório `.kube`
-- `echo -n $KUBE_CONFIG_HOMOL | base64 -d > $HOME/.kube/config_homol`: Gerar o arquivo exportando a chave de acesso ao kubernetes, que nesse caso, está em decodificado em base64 - Não é um requisito, só uma opção. 
+- `echo -n $KUBE_CONFIG_HOMOL | base64 -d > $HOME/.kube/config_homol`: Gerar o arquivo exportando a chave de acesso ao kubernetes, que nesse caso, está em decodificado em base64 - Não é um requisito, só uma opção.
 
 ```bash
 export KUBECONFIG=~/.kube/<arquivo_gerado>
@@ -44,12 +44,13 @@ Uma unidade do kubernetes. É objeto de controle dos pods, contém todas as espe
 ```bash
 kubectl get deployments -n <namespace>
 ```
+
 **Criar um deployment**
 
 ```bash
-kubectl run <nome> --image=<image> -n <namespace> 
+kubectl run <nome> --image=<image> -n <namespace>
 # Ex: Criando e habilitando uma porta
-kubectl run nginx --port 80 --image=nginx -n my-namespace 
+kubectl run nginx --port 80 --image=nginx -n my-namespace
 ```
 
 **Expondo um deployment**
@@ -59,7 +60,7 @@ kubectl run nginx --port 80 --image=nginx -n my-namespace
 Por padrão, apenas informando o comando para expor o deployment, será criado do tipo `ClusterIP`, ou seja, somente para acesso interno no cluster.
 
 ```bash
-kubectl expose deployment <nome> -n <namespace> 
+kubectl expose deployment <nome> -n <namespace>
 # Ex:
 kubectl expose deployment nginx -n my-namespace
 ```
@@ -69,7 +70,7 @@ kubectl expose deployment nginx -n my-namespace
 Para export o deployment, criando associando uma porta que permite o acesso externo, no browser informa-se a flag `--type=NodePort`
 
 ```bash
-kubectl expose deployment <nome> --type=NodePort -n <namespace> 
+kubectl expose deployment <nome> --type=NodePort -n <namespace>
 # Ex:
 kubectl expose deployment nginx --type=NodePort -n my-namespace
 ```

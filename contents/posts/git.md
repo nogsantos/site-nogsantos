@@ -1,7 +1,7 @@
 ---
 slug: 'git'
 title: Git comandos básicos
-tags: 
+tags:
   - GIT
 excerpt: |
   Comandos básicos utilizados no dia a dia

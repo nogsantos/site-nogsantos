@@ -1,11 +1,9 @@
 ---
 slug: 'docker'
 title: Docker containers, imagens e rede
-tags: 
+tags:
   - Docker
   - Containers
-  - Images
-  - Network
 excerpt: |
   Lista com os comandos básicos para criação de containers, imagens e rede
 ---
@@ -138,17 +136,16 @@ Cria um contêiner rodando a imagem informada.
 docker run -it -p 8080:80 nogsantos/nginx-debian:8 /bin/bash
 ```
 
+Remover uma imagem
+
+```bash
+docker -rmi [imagem]
+```
 
 Remover todas as imagens do tipo `<none>`
 
 ```bash
-docker rmi --force (docker images -f "dangling=true" -q)
-```
-
-Remover imagens
-
-```bash
-docker -rmi [imagem]
+docker rmi -f (docker images -f "dangling=true" -q)
 ```
 
 ## Rede

@@ -15,7 +15,7 @@ Digitando `vagrant` na linha de comando, será exibido uma lista de todos os com
 # Criando uma máquina virtual
 
 - `vagrant init` -- Inicializa o Vagrant com um arquivo `Vagrantfile`
-- `vagrant init <boxpath>` --  Inicializa o vagrant especificando um box. Para encontrar, a lista com as opções disponíveis [catalogo público Vagrant boxes](https://app.vagrantup.com/boxes/search). Quando encontrar o que procura, subistitua no local do boxpath. Exemplo, `vagrant init ubuntu/trusty64`.
+- `vagrant init <boxpath>` -- Inicializa o vagrant especificando um box. Para encontrar, a lista com as opções disponíveis [catalogo público Vagrant boxes](https://app.vagrantup.com/boxes/search). Quando encontrar o que procura, subistitua no local do boxpath. Exemplo, `vagrant init ubuntu/trusty64`.
 
 # Iniciando uma máquina virtual
 

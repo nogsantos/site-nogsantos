@@ -1,13 +1,13 @@
 export default [
-  'git-stash',
-  'puppet',
-  'docker',
-  'fedora',
-  'git',
   'kubernetes',
+  'docker',
+  'puppet',
   'ansible',
+  'git',
+  'git-stash',
   'vagrant',
   'mongodb',
+  'fedora',
   'devtools',
   'git-tricks'
 ];

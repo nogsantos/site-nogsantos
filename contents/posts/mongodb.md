@@ -1,7 +1,7 @@
 ---
 slug: 'mongodb'
 title: MongoDB
-tags: 
+tags:
   - MongoDB
   - NoSql
 excerpt: |

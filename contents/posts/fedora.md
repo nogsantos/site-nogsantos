@@ -63,6 +63,7 @@ Comment=Make api requests
 Categories=Development;IDE;
 Terminal=false
 ```
+
 Testar se é necessário tornar o arquivo executável:
 
 ```bash

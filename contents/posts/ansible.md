@@ -1,7 +1,7 @@
 ---
 slug: 'ansible'
 title: Ansible, o básico
-tags: 
+tags:
   - Ansible
 excerpt: |
   O Ansible uma plataforma de automação

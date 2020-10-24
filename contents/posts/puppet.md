@@ -4,7 +4,6 @@ title: Puppet, instalação e comandos básicos para o ambiente de desenvolvimen
 tags:
   - Puppet
   - Automação
-  - Vagrant
 excerpt: |
   Puppet é uma ferramenta e plataforma Open Source para automação e gerenciamento de configuração de servidores e infraestrutura
 ---
@@ -79,9 +78,9 @@ puppet resource service firewalld ensure=stopped
 >
 > ```bash
 > puppet cert generate <hostname-fqdn>
-> 
+>
 > # Consulta ao fqdn: hostname --fqdn
->```
+> ```
 
 Gerar o link para desenvolvimento e execução dos fatos. Mapeando o host com a máquina virtual
 
@@ -89,6 +88,7 @@ Gerar o link para desenvolvimento e execução dos fatos. Mapeando o host com a 
 cd /etc/puppetlabs/code/environments/
 ln -s /vagrant/control-repo production
 ```
+
 > Certifique-se de que, o diretório do control-repo está compartilhado dentro do diretório do vagrant
 
 Para que seja possível a comunicação dos clientes com o master, a porta 8140/TCP deve estar liberada e disponível
@@ -96,20 +96,20 @@ Para que seja possível a comunicação dos clientes com o master, a porta 8140/
 - verificar a porta no master
 
 ```bash
-netstat -na | grep 8140 
+netstat -na | grep 8140
 # Out
 tcp6       0      0 :::8140                 :::*                    LISTEN
 ```
 
-### Instalação e configuração puppet-agent na máquina cliente (node) 
+### Instalação e configuração puppet-agent na máquina cliente (node)
 
 Definir o hostname para identificação no master. A resolução de nomes dos agentes via DNS, não é requisito para o funcionamento do Puppet, mas é considerada como uma boa prática.
 
-> Para resolução de nomes, configure corretamente o arquivo `/etc/resolv.conf` com os parâmetros: `nameserver`, `domain` e `search`. Esses parâmetros devem conter a informação do(s) servidor(es) DNS e do domínio de sua rede. O arquivo `/etc/hosts` deve possuir pelo menos o nome do próprio host em que o agente está instalado. Neste arquivo deve existir uma entrada que informe o seu IP, FQDN e depois o hostname. 
+> Para resolução de nomes, configure corretamente o arquivo `/etc/resolv.conf` com os parâmetros: `nameserver`, `domain` e `search`. Esses parâmetros devem conter a informação do(s) servidor(es) DNS e do domínio de sua rede. O arquivo `/etc/hosts` deve possuir pelo menos o nome do próprio host em que o agente está instalado. Neste arquivo deve existir uma entrada que informe o seu IP, FQDN e depois o hostname.
 >
-> Exemplo: 192.168.1.10 node1.domain.com.br node1. 
+> Exemplo: 192.168.1.10 node1.domain.com.br node1.
 >
->No Debian/Ubuntu, o hostname é cadastrado no arquivo /etc/hostname. No CentOS/Red Hat, o hostname /etc/sysconfig/network. é cadastrado na variável HOSTNAME do arquivo
+> No Debian/Ubuntu, o hostname é cadastrado no arquivo /etc/hostname. No CentOS/Red Hat, o hostname /etc/sysconfig/network. é cadastrado na variável HOSTNAME do arquivo
 >
 > _Fonte: Puppet-BR apostila Puppet_
 
@@ -120,7 +120,7 @@ Definir o hostname para identificação no master. A resolução de nomes dos ag
 **Visualizar a configuração de nome e domínio do sistema operacional**
 
 ```bash
-echo "$(hostname) >> $(hostname --fqdn) >> $(hostname --domain)" 
+echo "$(hostname) >> $(hostname --fqdn) >> $(hostname --domain)"
 ```
 
 ```bash
@@ -170,9 +170,9 @@ puppet resource service puppet ensure=running enable=true
 > certname = <hostname.certname>
 > server = <master.hostname.fqdn>
 > environment = production
-> 
+>
 > [agent]
-> report = true 
+> report = true
 > ```
 
 ### Certificados
@@ -214,12 +214,12 @@ Para aplicar o catalogo, no cliente
 puppet agent -t
 ```
 
-### Removendo um certificado 
+### Removendo um certificado
 
 - No master, remover o certificado
 
 ```bash
-puppet cert clean <CERTNAME> 
+puppet cert clean <CERTNAME>
 ```
 
 - No cliente, parar os agentes
@@ -239,7 +239,7 @@ rm -rf /etc/puppetlabs/puppet/ssl
 - No cliente, remover o cache do catalogo
 
 ```bash
-rm -f /opt/puppetlabs/puppet/cache/client_data/catalog/<CERTNAME>.json 
+rm -f /opt/puppetlabs/puppet/cache/client_data/catalog/<CERTNAME>.json
 ```
 
 - No cliente, reiniciar os serviços do agent e mcolective
@@ -253,7 +253,7 @@ puppet resource service mcollective ensure=running
 
 ```bash
 puppet cert list --all
-puppet cert sign <NAME> 
+puppet cert sign <NAME>
 ```
 
 ## Comandos
@@ -565,19 +565,19 @@ node default {
   package { 'vim':
     ensure => present
   }
-} 
+}
 ```
 
 Para validar/simular alterações no host cliente, utilize o `--noop`
 
 ```bash
-puppet agent -t --noop 
+puppet agent -t --noop
 ```
 
 ## Monitoramento
 
-Quando o nó cliente ativa a o envio de relatório, na configuração,  `report = true ` os logs gerados no master podem ser localizados em `/var/log/puppetlabs/puppetserver/puppetserver.log`
+Quando o nó cliente ativa a o envio de relatório, na configuração, `report = true` os logs gerados no master podem ser localizados em `/var/log/puppetlabs/puppetserver/puppetserver.log`
 
-----
+---
 
 O código com exemplos, pode ser acessado em [Puppet-toolkit](https://github.com/nogsantos/Puppet-toolkit)

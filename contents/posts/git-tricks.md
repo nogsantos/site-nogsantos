@@ -16,13 +16,13 @@ When forget to commit a file, or leave a trash comment in. Is not necessary crea
 ##### Add the files
 
 ```bash
-git add [file or .] 
+git add [file or .]
 ```
 
 ##### Commit
 
 ```bash
-git commit --amend --reuse-message HEAD 
+git commit --amend --reuse-message HEAD
 ```
 
 #### cherry-pick
@@ -77,7 +77,7 @@ Get a list of unmerged branch in current branch
 git branch --no-merged
 ```
 
-~> Remote, use ```flag -a```
+~> Remote, use `flag -a`
 
 ```bash
 git branch -a --no-merged

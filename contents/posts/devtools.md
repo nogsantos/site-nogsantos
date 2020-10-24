@@ -27,4 +27,4 @@ In the devtools run: `document.designMode = 'on'`:
 
 ##### Credits
 
-This post It's a resume of original post on [DEV Community](https://dev.to/mustapha/7-tips-to-boost-your-productivity-as-a-web-developer-4jh7?utm_source=digest_mailer&amp;utm_medium=email&amp;utm_campaign=digest_email)
+This post It's a resume of original post on [DEV Community](https://dev.to/mustapha/7-tips-to-boost-your-productivity-as-a-web-developer-4jh7?utm_source=digest_mailer&utm_medium=email&utm_campaign=digest_email)
