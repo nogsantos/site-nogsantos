@@ -135,7 +135,7 @@ rpm -qf /bin/bash
 **Exibir lista de arquivos de configuração para um pacote**
 
 ```bash
-rpm -qc {pacakge-name}
+rpm -qc {package-name}
 Ex.:
 rpm -qc httpd
 ```

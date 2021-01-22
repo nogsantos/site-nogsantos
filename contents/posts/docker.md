@@ -30,13 +30,13 @@ Encerra o contêiner (Dentro do contêiner)
 Teclas: Ctrl + D
 ```
 
-Retorna para o contêiner caso tenha saído e o conteiner não tenha sido finalizado
+Retorna para o contêiner caso tenha saído e o contêiner não tenha sido finalizado
 
 ```bash
 docker attach (conteiner_id)
 ```
 
-Verifica o que foi feito no contêiner. Atualizações, exclusões etc...
+Verifique o que foi feito no contêiner. Atualizações, exclusões etc...
 
 ```bash
 docker diff (conteiner_id)
@@ -64,18 +64,18 @@ docker container prune
 docker rm $(docker ps -a -q)
 ```
 
-Remover somente conteiners com status `exited`
+Remover somente containers com status `exited`
 
 ```bash
 docker rm $(docker ps -q -f status=exited)
 ```
 
-Para que tudo o que foi feito não se perca, é necessário realizar o commit do conteiner, caso não seja feito, todas as atualizações realizadas serão perdidas.
+Para que tudo o que foi feito não se perca, é necessário realizar o commit do container, caso não seja feito, todas as atualizações realizadas serão perdidas.
 
-Versionamento dos contêiners
+Versionamento dos contêineres
 
 ```bash
-docker commit [conteiner_id] [nome do conteiner]
+docker commit [container_id] [nome do contêiner]
 Ex.:
 docker commit 8c1a nogsantos/debian:8
 ```
@@ -83,12 +83,12 @@ docker commit 8c1a nogsantos/debian:8
 Executa um comando no host dentro do contêiner informado.
 
 ```bash
-docker exec (conteiner_id) (comando)
+docker exec (container_id) (comando)
 Ex.:
 docker exec 8c1a ps -ef
 ```
 
-É possível ver detalhes referênte ao contêiner em execução.
+É possível ver detalhes referente ao contêiner em execução.
 
 ```bash
 docker inspect (conteiner_id)
@@ -154,7 +154,7 @@ Por default, ao subir um container, a rede criada e associada a eles pelo docker
 
 Pela rede default, quando um container tenta acessar o outro através do nome, não é possível, acesso somente pelo endereço IP, porém, como os endereços são dinâmicos, ao finalizar e subir novamente o container, a probabilidade de mudança de endereço é grande.
 
-Quando há a necessidade de acesso de um conteiner ao outro, a melhor opção é a de se criar uma rede, pois assim, dentro dessa rede, os conteiners poderão se comunicar utilizando apenas o nome.
+Quando há a necessidade de acesso de um contêiner ao outro, a melhor opção é a de se criar uma rede, pois assim, dentro dessa rede, os contêineres poderão se comunicar utilizando apenas o nome.
 
 Listar os dispositivos de redes
 

@@ -1,17 +1,17 @@
 ---
 slug: 'git-tricks'
-title: Git Tricks Cheat sheet
+title: Git Tricks Cheatsheet
 tags:
   - Git
   - Developer
   - Tools
 excerpt: |
-  Git Tricks Cheat sheet, usual git commands and some tricks.
+  Git Tricks Cheatsheet, usual git commands, and some tricks.
 ---
 
 #### amend
 
-When forget to commit a file, or leave a trash comment in. Is not necessary create a new revision, it is possible to add or modify and reuse the last commit.
+When forget to commit a file, or leave a trash comment in. Is not necessary to create a new revision, it is possible to add or modify and reuse the last commit.
 
 ##### Add the files
 
@@ -27,7 +27,7 @@ git commit --amend --reuse-message HEAD
 
 #### cherry-pick
 
-To apply some of commits in current branch.
+To apply some of the commits in the current branch.
 
 ##### Single
 
@@ -53,7 +53,7 @@ Get git commit logs.
 
 ##### Last commit
 
-View just the last commit on console:
+View just the last commit on the console:
 
 ```bash
 git log -1
@@ -69,7 +69,7 @@ git shortlog --summary --since='1 month ago'
 
 ##### List all unmerged branches branches
 
-Get a list of unmerged branch in current branch
+Get a list of an unmerged branch in the current branch
 
 ~> Local
 

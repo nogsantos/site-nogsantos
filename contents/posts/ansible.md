@@ -63,7 +63,7 @@ Decriptar um arquivo
 ansible-vault decrypt [arquivo.yml] --ask-vault-pass
 ```
 
-Encriptografar string (senha)
+Criptografar string (senha)
 
 Nesse caso, ele irá gerar um hash que deverá ser colocado no local da senha
 

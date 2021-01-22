@@ -11,9 +11,9 @@ excerpt: |
   Como copiar arquivos entre hosts de forma segura no linux com scp
 ---
 
-### SCP: Secury copy 
+### SCP: Secure copy
 
-Transferencia de arquivos segura. [Referência](http://www.hypexr.org/linux_scp_help.php)
+Transferência de arquivos segura. [Referência](http://www.hypexr.org/linux_scp_help.php)
 
 O scp permite que os arquivos sejam copiados entre hosts diferentes. Ele usa o `ssh` para transferência de dados e fornece a mesma autenticação e o mesmo nível de segurança.
 

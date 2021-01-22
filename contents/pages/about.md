@@ -5,7 +5,7 @@ title: Sobre
 
 ### Formação acadêmica
 
-Pós-Graduação lato sensu em projeto e desenvolvimento de software para dispositivos móveis.
+Pós-Graduação lato sensu em projeto e desenvolvimento de software para dispositivos móveis.
 
 Pós-Graduação lato sensu em banco de dados.
 
@@ -176,11 +176,11 @@ Um dos principais projetos, além dos citados anteriormente, foi o de migração
 
 Interagi Tecnologia - Goiânia - GO <small><a href="http://interagi.com.br" target="_blank" rel="noopener noreferrer">[www.interagi.com.br]</a></small>
 
-Fui coordenador de uma equipe multi-disciplinar. Desenvolvíamos e mantínhamos os sistemas comercializadas pela empresa.
-Nosso foco e atribuições eram as correções nos sistemas legados e as manutenção e implementação de novas funcionalidades. A equipe era composta por designers, testadores e programadores.
+Fui coordenador de uma equipe multidisciplinar. Desenvolvemos e mantemos os sistemas comercializados pela empresa.
+Nosso foco e atribuições eram as correções nos sistemas legados e a manutenção e implementação de novas funcionalidades. A equipe era composta por designers, testadores e programadores.
 
 Como estagiário, minha responsabilidade como programador foi no desenvolvimento de sites, portais e intranets.
-No time que trabalhei, uma das principais atribuições, era a de recebermos da equipe de designers o Mockup do que deveria ser desenvolvido, em formato PDF e transformá-lo em marcação e código Html, CSS e javascript.
+No time que trabalhei, uma das principais atribuições, era a de recebermos da equipe de designers o Mockup do que deveria ser desenvolvido, em formato PDF e transformá-lo em marcação e código HTML, CSS e javascript.
 
 <table>
   <thead>
@@ -235,9 +235,9 @@ No time que trabalhei, uma das principais atribuições, era a de recebermos da 
 
 Integra engenharia de sistemas - Goiânia - GO <small><a href="http://integraengenharia.com.br" target="_blank" rel="noopener noreferrer">[www.integraengenharia.com.br]</a></small>
 
-Início da minha carreira como desenvolvedor, ainda como estagiário e uma fase como contratado, trabalhei basicamente como analista e técnico de Suporte.
-Como programador, desenvolvi e realização manutenção de pequenas features nos sistemas comercializados pela empresa desenvolvidos em Delphi.
-Como suporte técnico, realizei treinamento e acompanhamento de novos usuários e trabalhei na implantação, migração dos sistemas na infraestrutura do cliente, isso por se tratar de um sistema para Desktop.
+No início da minha carreira como desenvolvedor, ainda como estagiário e uma fase como contratado, trabalhei basicamente como analista e técnico de Suporte.
+Como programador, desenvolvi e realizei a manutenção de pequenas features nos sistemas comercializados pela empresa desenvolvidos em Delphi.
+Como suporte técnico, realizei treinamento e acompanhamento de novos usuários e trabalhei na implantação e migração dos sistemas na infraestrutura do cliente, isso por se tratar de um sistema para Desktop.
 
 <table>
   <thead>

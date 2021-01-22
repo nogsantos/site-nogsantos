@@ -6,7 +6,7 @@ tags:
   - Variables
   - Scopes
   - Python
-  - Javascript  
+  - Javascript
 excerpt: |
   Overview about variable scopes
 ---

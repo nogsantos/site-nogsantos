@@ -5,7 +5,7 @@ tags:
   - Vagrant
   - Virtual
 excerpt: |
-  Basico cheat sheet vagrant comandos
+  Básico cheat sheet vagrant comandos
 ---
 
 Digitando `vagrant` na linha de comando, será exibido uma lista de todos os comandos disponíveis.
@@ -15,20 +15,20 @@ Digitando `vagrant` na linha de comando, será exibido uma lista de todos os com
 # Criando uma máquina virtual
 
 - `vagrant init` -- Inicializa o Vagrant com um arquivo `Vagrantfile`
-- `vagrant init <boxpath>` -- Inicializa o vagrant especificando um box. Para encontrar, a lista com as opções disponíveis [catalogo público Vagrant boxes](https://app.vagrantup.com/boxes/search). Quando encontrar o que procura, subistitua no local do boxpath. Exemplo, `vagrant init ubuntu/trusty64`.
+- `vagrant init <box path>' -- Inicializa o vagrant especificando um box. Para encontrar, a lista com as opções disponíveis [catálogo público Vagrant boxes](https://app.vagrantup.com/boxes/search). Quando encontrar o que procura, substitua no local do box path. Exemplo: `vagrant init ubuntu/trusty64`.
 
 # Iniciando uma máquina virtual
 
 - `vagrant up` -- inicia o ambiente vagrant (na primeira execução, provisiona o box)
 - `vagrant resume` -- resume uma máquina suspensa
-- `vagrant provision` -- força o reprovisionamento de uma máquina já provisionada
-- `vagrant reload` -- reinicia uma máquina virtual, carregando as novas configurações no Vagrantfile
+- `vagrant provision` -- força o re-provisionamento de uma máquina já provisionada
+- `vagrant reload` -- reiniciar uma máquina virtual, carregando as novas configurações no Vagrantfile
 - `vagrant reload --provision` -- reinicia uma máquina virtual forçando o provisionamento
 
 # Acessando uma máquina virtual
 
-- `vagrant ssh` -- conecta a uma máquia vua SSH
-- `vagrant ssh <boxname>` -- informando o box name
+- `vagrant ssh` -- conecta a uma máquina via SSH
+- `vagrant ssh <box name>' -- informando o box name
 
 # Finalizando uma máquina virtual
 
@@ -48,13 +48,13 @@ Digitando `vagrant` na linha de comando, será exibido uma lista de todos os com
 
 - `vagrant box list` -- lista os box instalados no host
 - `vagrant box add <name> <url>` -- download da imagem de um box para o computador
-- `vagrant box outdated` -- verifica por atualizações de um box
+- `vagrant box outdated` -- verificar por atualizações de um box
 - `vagrant boxes remove <name>` -- deleta o box do computador
-- `vagrant package` -- empacota um ambiente em execução do virtualbox em um box reutilizá-vel
+- `vagrant package` -- empacota um ambiente em execução do virtualbox em um box reutilizável
 
 # Salvando o progresso
 
--`vagrant snapshot save [options] [vm-name] <name>` -- vm-name o valor padrão é `default`. Permite criar um snapshot de um box
+-`vagrant snapshot save [options] [vmname] <name>` -- vm-name o valor padrão é `default`. Permite criar um snapshot de um box
 
 # Dicas
 
@@ -85,7 +85,7 @@ sudo brctl delbr [target]
 
 # Plugins
 
-- [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) : `$ vagrant plugin install vagrant-hostsupdater` para atualiza seu arquivo `/etc/hosts` automaticamente, todas as vezes que iniciar/finalizar o vagrant box
+- [vagrant-hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) : `$ vagrant plugin install vagrant-hostsupdater` para atualizar seu arquivo `/etc/hosts` automaticamente, todas as vezes que iniciar/finalizar o vagrant box
 
 # Notas
 

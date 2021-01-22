@@ -14,7 +14,7 @@ excerpt: |
 Edição do arquivo
 
 ```bash
-crontab -e 
+crontab -e
 ```
 
 **Formato do agendamento**
@@ -24,11 +24,11 @@ Ex.: Executar esse script todos os dias, todos os meses, todos os anos, a cada c
 ```bash
 # minute (m) hour (h) day of month (dom) month (mom) command
 
-*/5 * * * * [diretorio-arquivo-executavel]
+*/5 * * * * [diretorio-arquivo-executável]
 ```
 
 **Listar tasks agendadas**
 
 ```bash
-crontab -l 
+crontab -l
 ```

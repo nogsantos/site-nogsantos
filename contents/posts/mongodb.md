@@ -10,7 +10,7 @@ excerpt: |
 
 ## Criando coleções
 
-> PatterTips: Criar coleções no plural e em minúsculo exemplo: `alunos`
+> Pattern Tips: Criar coleções no plural e em minúsculo exemplo: `alunos`
 
 ```bash
 db.createCollection("collection-name");
@@ -119,7 +119,7 @@ db.alunos.update(
 )
 ```
 
-O update, por padrão, só executa um comando para o primeiro documento que ele encontra, troca apenas um pedacinho do conteúdo. Para que ele entenda que isso tem que ser feito para várias coisas é preciso passar um `multi : true`, que, por padrão é `false`. Como queremos passar isso para "múltiplas linhas" escreveremos o seguinte:
+O update, por padrão, só executa um comando para o primeiro documento que ele encontra, troca apenas um pedacinho do conteúdo. Para que ele entenda que isso tem que ser feito para várias coisas é preciso passar um `multi : true`, que, por padrão, é `false`. Como queremos passar isso para "múltiplas linhas" escreveremos o seguinte:
 
 ```bash
 db.alunos.update(
@@ -180,7 +180,7 @@ db.alunos.remove({
 
 ## Busca por proximidade
 
-Para esse tipo de busca, o MongoDB exige que na coleção, os campos `type: "Point"` e `coordinates: [lat, long]` sejam informados, os demais, como por exemplo, `endereço, cep, cidade etc` são opcionais.
+Para esse tipo de busca, o MongoDB exige que na coleção, os campos `type: "Point"` and 'coordinates: [lat, long]` sejam informados, os demais, como por exemplo, `endereço, cep, cidade etc` são opcionais.
 
 ### Criando índice de busca
 
@@ -205,7 +205,7 @@ Para buscas por proximidade, é necessário a criação de um indexador para a b
   ...
 ```
 
-Criação do indice para a estrutura:
+Criação do índice para a estrutura:
 
 ```bash
 db.[collection].createIndex({"[field-name]": "[index-type]"})

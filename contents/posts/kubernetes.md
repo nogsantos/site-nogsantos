@@ -13,7 +13,7 @@ excerpt: |
 Para acessar o kubernetes remotamente, é necessário definir a configuração e credenciais de acesso pela variável `KUBECONFIG`. Para isso, deve ser gerado um arquivo de configuração:
 
 - `mkdir -p $HOME/.kube`: Caso não exista, criar o diretório `.kube`
-- `echo -n $KUBE_CONFIG_HOMOL | base64 -d > $HOME/.kube/config_homol`: Gerar o arquivo exportando a chave de acesso ao kubernetes, que nesse caso, está em decodificado em base64 - Não é um requisito, só uma opção.
+- `echo -n $KUBE_CONFIG_HOMOL | base64 -d > $HOME/.kube/config_homol`: Gerar o arquivo exportando a chave de acesso ao kubernetes, que nesse caso, está em codificado em base64 - Não é um requisito, só uma opção.
 
 ```bash
 export KUBECONFIG=~/.kube/<arquivo_gerado>
@@ -25,7 +25,7 @@ export KUBECONFIG=/home/<usuario>/.kube/config_homol
 
 ### Namespaces
 
-Utilizado para definição de limites no kubernets. Os projetos podem/devem ser separados e controlados por namespaces.
+Utilizado para definição de limites no kubernetes. Os projetos podem/devem ser separados e controlados por namespaces.
 
 **Criar um namespace**
 
@@ -103,7 +103,7 @@ kubectl get deployments nginx -o yaml -n my-namespace > arquivo.yaml
 
 ### Replicaset
 
-Abaixo e sendo controlados pelo deployment, estão os replicasets, são criados juntamente com eles. Tem o objetivo de controlar a quantidade de pods.
+Abaixo e sendo controlados pelo deployment, estão os replicasets, que são criados juntamente com eles. Tem o objetivo de controlar a quantidade de pods.
 
 ```bash
 kubectl get replicasets -n <namespace>
@@ -111,13 +111,13 @@ kubectl get replicasets -n <namespace>
 
 ### Pods
 
-Estão os containers enviados através de um deployment. A quantidade de pods são controladas pelo replicaset
+Estão os contêineres enviados através de um deployment. A quantidade de pods são controladas pelo replicaset
 
 ```bash
 kubectl get pods -n <namespace>
 ```
 
-## Outos comandos
+## Outros comandos
 
 **Editar um serviço criado**
 
@@ -179,7 +179,7 @@ kubectl describe node <node-name>
 kubectl describe pod <pod-name> -n <namespace>
 ```
 
-**Visualizar informações de um pod em um namespace pelo deploymet name**
+**Visualizar informações de um pod em um namespace pelo deployment name**
 
 ```bash
 kubectl describe deployment <deployment-name> -n <namespace>
@@ -212,7 +212,7 @@ Replicas:               1 desired | 1 updated | 1 total | 0 available | 1 unavai
 
 Os passos para acessar o pod são:
 
-- Localizar o atual nome do pod pelo name-space, que a cada deploy é alterado:
+- Localizar o atual nome do pod pelo namespace, que a cada deploy é alterado:
 
 ```bash
 kubectl get po -o wide -n <namespace>

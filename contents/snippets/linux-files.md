@@ -1,6 +1,6 @@
 ---
 slug: 'linux-files'
-title: 'Linux: Manipulações de arquivos'
+title: 'Linux: Manipulação de arquivos'
 tags:
   - Linux
   - arquivos
@@ -15,7 +15,7 @@ excerpt: |
 Cria uma cópia do arquivo removendo as linhas em branco
 
 ```bash
-sed '/^$/d' [nome-arquivo] > [novo-arquivo] 
+sed '/^$/d' [nome-arquivo] > [novo-arquivo]
 ```
 
 ```bash
@@ -34,5 +34,5 @@ grep -ni man /var/log/packages/grep.tgz (-i : case insensitive, -n : número da 
 Ex.:
 
 ```bash
-grep -ni java test 
+grep -ni java test
 ```

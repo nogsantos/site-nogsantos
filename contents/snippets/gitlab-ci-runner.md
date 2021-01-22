@@ -5,8 +5,8 @@ tags:
   - gitlab
   - gitlab ci
   - ci
-  - gitlab communit
-  - communit
+  - gitlab community
+  - community
   - runner
   - docker
 excerpt: |

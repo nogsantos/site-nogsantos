@@ -8,7 +8,7 @@ excerpt: |
   Puppet é uma ferramenta e plataforma Open Source para automação e gerenciamento de configuração de servidores e infraestrutura
 ---
 
-Essa página é um resumo da apostila [Puppet-BR](https://github.com/puppet-br/apostila-puppet), abordando a questão de instação e configurações básicas.
+Essa página é um resumo da apostila [Puppet-BR](https://github.com/puppet-br/apostila-puppet), abordando a questão de instalação e configurações básicas.
 
 ## Instalação e configuração do ambiente de desenvolvimento
 
@@ -34,7 +34,7 @@ hostnamectl set-hostname puppet
 rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
 ```
 
-**Instalando o puppetserver**
+**Instalando o puppet server**
 
 ```bash
 yum install -y puppetserver
@@ -115,7 +115,7 @@ Definir o hostname para identificação no master. A resolução de nomes dos ag
 
 **Adicionar endereço do puppet server aos hosts**
 
-> O único requisito de fato é que o host consiga resolver o nome do servidor Puppet Master. Por padrão, o agente vai usar o FQDN do host como o CN-Common Name para indentificá-lo durante a criação do certificado SSL. Entretanto, é possível usar o Puppet em situações que seja necessário que o CN do certificado não possua nenhuma relação com o DNS.
+> O único requisito de fato é que o host consiga resolver o nome do servidor Puppet Master. Por padrão, o agente vai usar o FQDN do host como o CN-Common Name para identificá-lo durante a criação do certificado SSL. Entretanto, é possível usar o Puppet em situações que seja necessário que o CN do certificado não possua nenhuma relação com o DNS.
 
 **Visualizar a configuração de nome e domínio do sistema operacional**
 
@@ -148,7 +148,7 @@ rpm -ivh http://yum.puppetlabs.com/puppetlabs-release-pc1-el-7.noarch.rpm
 yum install -y puppet-agent
 ```
 
-Com o agente instalado, é possivel realizar as configurações utilizando o `puppet resource`
+Com o agente instalado, é possível realizar as configurações utilizando o `puppet resource`
 
 - Desabilitando o firewall, no ambiente de desenvolvimento, não é necessário
 
@@ -208,7 +208,7 @@ puppet cert sign "centos-7.local"
 
 Com o certificado assinado, a comunicação entre master e host pode ser realizada.
 
-Para aplicar o catalogo, no cliente
+Para aplicar o catálogo, no cliente
 
 ```bash
 puppet agent -t
@@ -230,19 +230,19 @@ puppet resource service mcollective ensure=stopped
 puppet resource service pxp-agent ensure=stopped
 ```
 
-- No cliente, deleter o diretório SSL
+- No cliente, deletar o diretório SSL
 
 ```bash
 rm -rf /etc/puppetlabs/puppet/ssl
 ```
 
-- No cliente, remover o cache do catalogo
+- No cliente, remover o cache do catálogo
 
 ```bash
 rm -f /opt/puppetlabs/puppet/cache/client_data/catalog/<CERTNAME>.json
 ```
 
-- No cliente, reiniciar os serviços do agent e mcolective
+- No cliente, reiniciar os serviços do agent e mcollective
 
 ```bash
 puppet resource service puppet ensure=running
@@ -352,7 +352,7 @@ puppet resource file /tmp/teste.txt ensure=file content='teste'
 puppet resource exec 'ping -c3 google.com > /tmp/ping.txt' path='/bin:/usr/bin'
 ```
 
-- Aplicar um manifest específico
+- Aplicar um manifesto específico
 
 ```bash
 puppet apply [caminho]/[nome].pp
@@ -372,7 +372,7 @@ puppet parser validate arquivo.pp
 
 ## Fatos
 
-O `facter` é um comando e uma ferramenta fundamental do ecossistema do Puppet, que gera uma lista de variáveis chamadas de fatos, que contém diversas informações sobre o sistema operacional.
+O `facter` é um comando é uma ferramenta fundamental do ecossistema do Puppet, que gera uma lista de variáveis chamadas de fatos, que contém diversas informações sobre o sistema operacional.
 
 ```bash
 facter

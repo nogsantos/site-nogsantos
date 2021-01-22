@@ -7,11 +7,11 @@ excerpt: |
   Comandos básicos utilizados no dia a dia
 ---
 
-## Branchs
+## Branches
 
 ### Cópia
 
-Copiar de uma branch localizada num repositório remoto, com o comando, é feito a cópia automaticamente para a branch chamada `design`.
+Copiado de uma branch localizada num repositório remoto, com o comando, é feita a cópia automaticamente para a branch chamada `design`.
 
 ```bash
 git checkout -t origin/design
@@ -43,7 +43,7 @@ git push -d origin design
 git push origin :design
 ```
 
-### Listar branchs
+### Listar branches
 
 Parâmetros:
 
@@ -115,7 +115,7 @@ O objetivo do comando `git rebase` é fazer com que a `branch` em que se está t
 
 Para isso, caso haja `commits` novos na `branch` que terá a base trocada, o Git os coloca em um local temporário e em seguida começa a aplicar a nova base. Após a atualização do `HEAD`, o Git começa a aplicar seus `commits` sobre a nova base.
 
-Uma vez feito o `rebase` temos um histórico mais limpo dos `commits` e podemos usar o comando merge a partir do master para aplicar todas as alterações do `branch` testeRebase.
+Uma vez feito o `rebase` temos um histórico mais limpo dos `commits` e podemos usar o comando merge a partir do master para aplicar todas as alterações do `branch` teste Rebase.
 
 No processo de rebase, quando há um conflito, temos 3 opções a seguir.
 
@@ -177,7 +177,7 @@ As alterações são removidas do histórico local de commits, do index, mas nã
 git reset
 ```
 
-O Git nos fornece um atalho para podermos referênciar o hash dos últimos commits sem a necessidade de descobrir o hash de cada commit.
+O Git nos fornece um atalho para podermos referenciar o hash dos últimos commits sem a necessidade de descobrir o hash de cada commit.
 
 `HEAD~1`
 
@@ -195,21 +195,21 @@ git reset --hard origin/<branch>
 
 ## Remote
 
-Visualizar os repositorios remotos
+Visualizar os repositórios remotos
 
 ```bash
 git remote
 ```
 
-Quando realizar o fork de um repositorio, para manter a referência no clone, adicioná-la
+Quando realizar o fork de um repositório, para manter a referência no clone, adicioná-la
 
 ```bash
 git remote add [alias] [endereço_do_projeto]
 ```
 
-Git `fetch` trás a alterações de um repositório remoto.
+Git `fetch` trás a alteração de um repositório remoto.
 
-Após adiciná-lo ao projeto
+Após adicioná-la ao projeto
 
 ```bash
 git fetch [alias]
@@ -233,4 +233,4 @@ Ao executar o `cherry-pick`, o commit escolhido é copiado. Contudo, existe uma 
 
 A opção `-n` ou `--no-commit` permite que recuperemos as alterações de um dado commit sem precisar inseri-lo no histórico local.
 
-> Alguns dos casos mais comuns de uso do git cherry-pick são situações em que um pull request ou a mescla de uma branch será recusada, mas há commits com código aproveitável e necessário. Estes commits precisam ser isolados e importados pra dentro da sua branch atual, com o cuidado de não incluir o restante do código que será descartado.
+> Alguns dos casos mais comuns de uso do git cherry-pick são situações em que um pull request ou a mescla de uma branch será recusada, mas há commits com código aproveitável é necessário. Estes commits precisam ser isolados e importados para dentro da sua branch atual, com o cuidado de não incluir o restante do código que será descartado.
