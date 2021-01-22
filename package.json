@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^0.4.0",
-    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/sitemap": "^2.3.0",
@@ -23,7 +23,11 @@
     "nuxt": "^2.0.0",
     "nuxt-helmet": "^1.2.3",
     "nuxt-property-decorator": "^2.7.2",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.6",
     "vue-property-decorator": "^8.4.2",
+    "vue-server-renderer": "^2.6.12",
+    "vue-template-compiler": "^2.6.12",
     "vuex-class": "^0.3.2"
   },
   "devDependencies": {
@@ -44,6 +48,6 @@
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
     "ts-jest": "^25.5.1",
-    "vue-jest": "^4.0.0-beta.2"
+    "vue-jest": "^4.0.0-rc.1"
   }
 }
