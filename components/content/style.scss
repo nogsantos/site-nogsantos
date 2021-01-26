@@ -1,1 +1,10 @@
 @use "@primer/css/labels/index.scss";
+@import "../../assets/scss/abstract/variables";
+
+@media only screen and (max-width: $mid-screen) {
+  .tags {
+    & ul {
+      display: block;
+    }
+  }
+}
