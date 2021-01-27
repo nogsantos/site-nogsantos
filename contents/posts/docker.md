@@ -1,11 +1,11 @@
 ---
 slug: 'docker'
-title: Docker containers, imagens e rede
+title: Docker contêineres, imagens e rede
 tags:
   - Docker
   - Containers
 excerpt: |
-  Lista com os comandos básicos para criação de containers, imagens e rede
+  Lista com os comandos básicos para criação de contêineres, imagens e rede
 ---
 
 ## Containers
@@ -48,13 +48,13 @@ Lista os processos (contêiner) ativos
 docker ps
 ```
 
-Parando todos os container ativos de uma vez
+Parando todos os contêineres ativos de uma vez
 
 ```bash
 docker stop $(docker ps -q)
 ```
 
-Remover todos os containers
+Remover todos os contêineres
 
 ```bash
 docker container prune
@@ -64,13 +64,13 @@ docker container prune
 docker rm $(docker ps -a -q)
 ```
 
-Remover somente containers com status `exited`
+Remover somente contêineres com status `exited`
 
 ```bash
 docker rm $(docker ps -q -f status=exited)
 ```
 
-Para que tudo o que foi feito não se perca, é necessário realizar o commit do container, caso não seja feito, todas as atualizações realizadas serão perdidas.
+Para que tudo o que foi feito não se perca, é necessário realizar o commit do contêiner, caso não seja feito, todas as atualizações realizadas serão perdidas.
 
 Versionamento dos contêineres
 
@@ -150,9 +150,9 @@ docker rmi -f (docker images -f "dangling=true" -q)
 
 ## Rede
 
-Por default, ao subir um container, a rede criada e associada a eles pelo docker é a `bridge`.
+Por default, ao subir um contêiner, a rede criada e associada a eles pelo docker é a `bridge`.
 
-Pela rede default, quando um container tenta acessar o outro através do nome, não é possível, acesso somente pelo endereço IP, porém, como os endereços são dinâmicos, ao finalizar e subir novamente o container, a probabilidade de mudança de endereço é grande.
+Pela rede default, quando um contêiner tenta acessar o outro através do nome, não é possível, acesso somente pelo endereço IP, porém, como os endereços são dinâmicos, ao finalizar e subir novamente o contêiner, a probabilidade de mudança de endereço é grande.
 
 Quando há a necessidade de acesso de um contêiner ao outro, a melhor opção é a de se criar uma rede, pois assim, dentro dessa rede, os contêineres poderão se comunicar utilizando apenas o nome.
 
@@ -217,23 +217,23 @@ docker network inspect nogsantos
 ]
 ```
 
-Rodar um container dentro da rede específica
+Rodar um contêiner dentro da rede específica
 
 ```bash
 docker run -it --name [nome] --network [nome-rede] [imagem]
 
 Ex.:
 
-docker run -it --name meu-container --network nogsantos nogsantos/ubuntu
+docker run -it --name meu-conteiner --network nogsantos nogsantos/ubuntu
 ```
 
-Visualizar o ip do container
+Visualizar o ip do contêiner
 
 ```bash
 docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' meu-container
 ```
 
-Visualizar dados da rede do container
+Visualizar dados da rede do contêiner
 
 ```bash
  docker inspect --format="{{json .NetworkSettings.Networks }}" network-test
