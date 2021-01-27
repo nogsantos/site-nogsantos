@@ -116,12 +116,7 @@ export default {
     'nuxt-sass-resources-loader',
     '@nuxtjs/sitemap',
     'nuxt-helmet',
-    '@nuxtjs/google-adsense'
   ],
-
-  'google-adsense': {
-    id: 'ca-pub-0752921470527042'
-  },
 
   sitemap: {
     path: '/sitemap.xml',
