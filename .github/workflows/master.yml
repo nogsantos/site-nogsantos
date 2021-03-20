@@ -9,6 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build and Deploy
+    env:
+      NUXT_ENV_SENTRY_DNS: ${{ secrets.SENTRY_DNS }}
+      NUXT_ENV_SEO_URL: ${{ secrets.SEO_URL }}
+      NUXT_ENV_SEO_TWITTER_IMAGE: ${{ secrets.SEO_TWITTER_IMAGE }}
+      NUXT_ENV_SEO_TWITTER_ACCOUNT: ${{ secrets.SEO_TWITTER_ACCOUNT }}
 
     steps:
       - uses: actions/checkout@master
@@ -17,11 +22,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '15'
-        env:
-          NUXT_ENV_SENTRY_DNS: ${{ secrets.SENTRY_DNS }}
-          NUXT_ENV_SEO_URL: ${{ secrets.SEO_URL }}
-          NUXT_ENV_SEO_TWITTER_IMAGE: ${{ secrets.SEO_TWITTER_IMAGE }}
-          NUXT_ENV_SEO_TWITTER_ACCOUNT: ${{ secrets.SEO_TWITTER_ACCOUNT }}
+      - run: echo $NUXT_ENV_SEO_TWITTER_ACCOUNT
       - run: npm ci
       - run: npm run test
       - run: npm run generate
