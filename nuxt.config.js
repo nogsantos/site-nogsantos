@@ -4,8 +4,8 @@ import posts from './contents/posts';
 import snippets from './contents/snippets';
 import ENV from './env';
 
-export default {
-  mode: 'universal',
+const nuxtConfig = {
+  target: 'static',
   generate: {
     routes: [
       ...projects.map((slug) => `/projects/${slug}/`),
@@ -119,7 +119,7 @@ export default {
   ],
 
   sentry: {
-    dsn: ENV.sentry.dns || process.env.SENTRY_DNS,
+    dsn: ENV.sentry.dns,
     tracing: true,
     tracesSampleRate: 1.0,
     vueOptions: {
@@ -152,15 +152,21 @@ export default {
    ** See https://helmetjs.github.io/
    */
   helmet: {
-    dnsPrefetchControl: true,
-    frameguard: true,
-    hidePoweredBy: true,
-    hsts: true,
-    ieNoOpen: true,
-    noSniff: true,
-    permittedCrossDomainPolicies: true,
-    referrerPolicy: true,
-    xssFilter: true
+    dnsPrefetchControl: {
+      allow: false
+    },
+    frameguard: {
+      action: 'deny'
+    },
+    hsts: {
+      maxAge: 123456
+    },
+    permittedCrossDomainPolicies: {
+      permittedPolicies: 'none'
+    },
+    referrerPolicy: {
+      policy: ['origin', 'unsafe-url']
+    }
   },
 
   /*
@@ -181,8 +187,7 @@ export default {
         loader: 'frontmatter-markdown-loader'
       });
     }
-  },
-  publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL || 'https://nuxtjs.org'
   }
 };
+
+export default nuxtConfig;

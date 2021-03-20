@@ -1,15 +1,15 @@
 export default {
   site: {
-    address: process.env.BASE_URL
+    address: process.env.NUXT_ENV_BASE_URL
   },
   sentry: {
-    dns: process.env.SENTRY_DNS
+    dns: process.env.NUXT_ENV_SENTRY_DNS
   },
   seo: {
-    site: process.env.SEO_URL,
+    site: process.env.NUXT_ENV_SEO_URL,
     twitter: {
-      image: process.env.SEO_TWITTER_IMAGE,
-      account: process.env.SEO_TWITTER_ACCOUNT
+      image: process.env.NUXT_ENV_SEO_TWITTER_IMAGE,
+      account: process.env.NUXT_ENV_SEO_TWITTER_ACCOUNT
     }
   }
 };
