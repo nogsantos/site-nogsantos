@@ -7,8 +7,8 @@ import { Link } from '@/components/';
   }
 })
 export default class Cover extends Vue {
-  @Prop({ type: String, required: true }) title?: String;
-  @Prop({ type: Array, default: [] }) items?: Array<String>;
-  @Prop({ type: String, required: true }) link?: String;
-  @Prop({ type: Boolean, default: false }) loading?: Boolean;
+  @Prop({ type: String, required: true }) title?: string;
+  @Prop({ type: Array, default: [] }) items?: Array<string>;
+  @Prop({ type: String, required: true }) link?: string;
+  @Prop({ type: Boolean, default: false }) loading?: boolean;
 }

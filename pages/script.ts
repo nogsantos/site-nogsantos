@@ -1,10 +1,25 @@
 import { Vue, Component } from 'nuxt-property-decorator';
 
-@Component
+@Component({
+  head() {
+    return {
+      title: 'Fabricio Nogueira',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Programador | Python | Javascript | DevOps'
+        }
+      ]
+    };
+  }
+})
 class Index extends Vue {
-  page: String = 'index';
-  title: String = '';
-  content: String = '';
+  page: string = 'index';
+  title: string = '';
+  content: string = '';
 
   head() {
     return {

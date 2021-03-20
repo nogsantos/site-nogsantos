@@ -12,6 +12,8 @@ import Content from '@/pages/Classes/Content';
     return {
       title: 'Fabricio Nogueira | Posts',
       meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           hid: 'description',
           name: 'description',
@@ -22,11 +24,11 @@ import Content from '@/pages/Classes/Content';
   }
 })
 export default class Posts extends Content {
-  async fetch() {
-    return await Promise.all(
+  fetch() {
+    return Promise.all(
       posts.map((content) => this.asyncImport('posts', content))
     )
-      .then((posts) => (this.contents = posts))
+      .then((post) => (this.contents = post))
       .finally(() => (this.loading = false));
   }
 }

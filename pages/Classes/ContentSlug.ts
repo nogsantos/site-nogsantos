@@ -1,11 +1,11 @@
 import { Vue } from 'nuxt-property-decorator';
 
 export default class ContentSlug extends Vue {
-  name: String = '';
-  title: String = '';
-  content: String = '';
-  excerpt: String = '';
-  tags: Array<String> = [];
+  name: string = '';
+  title: string = '';
+  content: string = '';
+  excerpt: string = '';
+  tags: Array<string> = [];
 
   defaultHead(category: string) {
     return {

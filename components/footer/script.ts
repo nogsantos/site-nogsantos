@@ -7,8 +7,8 @@ import { LinkImage } from '@/components/';
   }
 })
 class Footer extends Vue {
-  inconSize: Number = 24;
-  baseImagePath: String =
+  inconSize: number = 24;
+  baseImagePath: string =
     'https://apisite.fabricionogueira.me/wp-content/uploads/2018/01';
 
   iconsList: Array<Object> = [
@@ -50,7 +50,7 @@ class Footer extends Vue {
     }
   ];
 
-  get today(): Number {
+  get today(): number {
     return new Date().getFullYear();
   }
 }

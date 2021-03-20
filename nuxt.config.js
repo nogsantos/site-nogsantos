@@ -1,9 +1,8 @@
+import { Integrations } from '@sentry/tracing';
 import projects from './contents/projects';
 import posts from './contents/posts';
 import snippets from './contents/snippets';
-
-const IMAGE =
-  'https://res.cloudinary.com/nogsantos/image/upload/v1590550842/avatar/avatar-professional.png';
+import ENV from './env';
 
 export default {
   mode: 'universal',
@@ -39,12 +38,12 @@ export default {
       {
         hid: 'og:image',
         name: 'og:image',
-        content: IMAGE
+        content: ENV.seo.twitter.image
       },
       {
         hid: 'og:url',
         name: 'og:url',
-        content: 'https://fabricionogueira.me/'
+        content: ENV.seo.site
       },
       {
         hid: 'twitter:card',
@@ -54,7 +53,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: IMAGE
+        content: ENV.seo.twitter.image
       },
       {
         hid: 'twitter:title',
@@ -69,12 +68,12 @@ export default {
       {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@nogsantos'
+        content: ENV.seo.twitter.account
       },
       {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: '@nogsantos'
+        content: ENV.seo.twitter.account
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -116,11 +115,30 @@ export default {
     'nuxt-sass-resources-loader',
     '@nuxtjs/sitemap',
     'nuxt-helmet',
+    '@nuxtjs/sentry'
   ],
+
+  sentry: {
+    dsn: ENV.sentry.dns || process.env.SENTRY_DNS,
+    tracing: true,
+    tracesSampleRate: 1.0,
+    vueOptions: {
+      tracing: true,
+      tracingOptions: {
+        hooks: ['mount', 'update'],
+        timeout: 2000,
+        trackComponents: true
+      }
+    },
+    config: {
+      integrations: [new Integrations.BrowserTracing()],
+      tracesSampleRate: 1.0
+    }
+  },
 
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://fabricionogueira.me',
+    hostname: ENV.seo.site,
     gzip: true,
     routes: projects.map((slug) => `/projects/${slug}/`)
   },
@@ -163,5 +181,8 @@ export default {
         loader: 'frontmatter-markdown-loader'
       });
     }
+  },
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'https://nuxtjs.org'
   }
 };

@@ -1,10 +1,25 @@
 import { Vue, Component } from 'nuxt-property-decorator';
 
-@Component
+@Component({
+  head() {
+    return {
+      title: 'Fabricio Nogueira | Contato',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Entre em contato'
+        }
+      ]
+    };
+  }
+})
 class Contact extends Vue {
-  page: String = 'contact';
-  title: String = '';
-  content: String = '';
+  page: string = 'contact';
+  title: string = '';
+  content: string = '';
 
   head() {
     return {
