@@ -18,10 +18,10 @@ jobs:
         with:
           node-version: '15'
         env:
-          SENTRY_DNS: ${{ secrets.SENTRY_DNS }}
-          SEO_URL: ${{ secrets.SEO_URL }}
-          SEO_TWITTER_IMAGE: ${{ secrets.SEO_TWITTER_IMAGE }}
-          SEO_TWITTER_ACCOUNT: ${{ secrets.SEO_TWITTER_ACCOUNT }}
+          NUXT_ENV_SENTRY_DNS: ${{ secrets.SENTRY_DNS }}
+          NUXT_ENV_SEO_URL: ${{ secrets.SEO_URL }}
+          NUXT_ENV_SEO_TWITTER_IMAGE: ${{ secrets.SEO_TWITTER_IMAGE }}
+          NUXT_ENV_SEO_TWITTER_ACCOUNT: ${{ secrets.SEO_TWITTER_ACCOUNT }}
       - run: npm ci
       - run: npm run test
       - run: npm run generate
