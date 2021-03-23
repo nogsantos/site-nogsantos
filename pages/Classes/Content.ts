@@ -8,4 +8,12 @@ export default class Content extends Vue {
     const content = await import(`@/contents/${category}/${contentFile}.md`);
     return content.attributes;
   }
+
+  async fetch(items: Array<string>, page: string) {
+    return await Promise.all(
+      items.map((content) => this.asyncImport(page, content))
+    )
+      .then((post) => (this.contents = post))
+      .finally(() => (this.loading = false));
+  }
 }

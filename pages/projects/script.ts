@@ -12,8 +12,6 @@ import Content from '@/pages/Classes/Content';
     return {
       title: 'Fabricio Nogueira | Projetos',
       meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           hid: 'description',
           name: 'description',
@@ -24,11 +22,7 @@ import Content from '@/pages/Classes/Content';
   }
 })
 export default class Projects extends Content {
-  fetch() {
-    return Promise.all(
-      projects.map((content) => this.asyncImport('projects', content))
-    )
-      .then((project) => (this.contents = project))
-      .finally(() => (this.loading = false));
-  }
+  created(): void {
+    this.fetch(projects, 'projects');
+  } 
 }
