@@ -1,8 +1,7 @@
 import { Component } from 'nuxt-property-decorator';
 import { Cover } from '@/components/';
+import { Listing } from '@/pages/Classes/Content';
 import snippets from '~/contents/snippets';
-
-import Content from '@/pages/Classes/Content';
 
 @Component({
   components: {
@@ -21,7 +20,7 @@ import Content from '@/pages/Classes/Content';
     };
   },
 })
-export default class Snippets extends Content {
+export default class Snippets extends Listing {
   created(): void {
     this.fetch(snippets, 'snippets');
   }

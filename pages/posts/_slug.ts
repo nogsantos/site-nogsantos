@@ -1,19 +1,18 @@
 import { Component } from 'nuxt-property-decorator';
 import { Content } from '@/components/index';
-
-import ContentSlug from '@/pages/Classes/ContentSlug';
+import { Slug } from '@/pages/Classes/Content';
 
 @Component({
   components: {
-    'fn-content': Content
-  }
+    'fn-content': Content,
+  },
 })
-export default class PostsSlug extends ContentSlug {
+export default class PostsSlug extends Slug {
   head() {
     return this.defaultHead('Post');
   }
 
-  fetch() {
+  created(): void {
     this.load('posts');
   }
 }

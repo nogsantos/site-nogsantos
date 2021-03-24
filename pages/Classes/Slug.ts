@@ -1,6 +1,6 @@
 import { Vue } from 'nuxt-property-decorator';
 
-export default class ContentSlug extends Vue {
+export default class Slug extends Vue {
   name: string = '';
   title: string = '';
   content: string = '';
@@ -14,19 +14,19 @@ export default class ContentSlug extends Vue {
         {
           hid: 'og:title',
           name: 'og:title',
-          content: this.excerpt
+          content: this.excerpt,
         },
         {
           hid: 'og:description',
           name: 'og:description',
-          content: this.tags.join(',')
+          content: this.tags.join(','),
         },
         {
           hid: 'twitter:card',
           name: 'twitter:card',
-          content: this.excerpt
-        }
-      ]
+          content: this.excerpt,
+        },
+      ],
     };
   }
 

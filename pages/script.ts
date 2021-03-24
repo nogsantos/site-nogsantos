@@ -1,4 +1,5 @@
-import { Vue, Component } from 'nuxt-property-decorator';
+import { Component } from 'nuxt-property-decorator';
+import { Static } from '@/pages/Classes/Content';
 
 @Component({
   head() {
@@ -8,29 +9,15 @@ import { Vue, Component } from 'nuxt-property-decorator';
         {
           hid: 'description',
           name: 'description',
-          content: 'Programador | Python | Javascript | DevOps'
-        }
-      ]
+          content: 'Programador | Python | Javascript | DevOps',
+        },
+      ],
     };
-  }
+  },
 })
-class Index extends Vue {
-  page: string = 'index';
-  title: string = '';
-  content: string = '';
-
-  head() {
-    return {
-      title: this.title
-    };
-  }
-
-  async fetch() {
-    const { html, attributes } = await import(
-      `@/contents/pages/${this.page}.md`
-    );
-    this.title = attributes.title;
-    this.content = html;
+class Index extends Static {
+  created(): void {
+    this.fetch('index');
   }
 }
 

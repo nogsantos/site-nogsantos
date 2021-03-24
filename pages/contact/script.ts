@@ -1,5 +1,5 @@
-import { Vue, Component } from 'nuxt-property-decorator';
-
+import { Component } from 'nuxt-property-decorator';
+import { Static } from '@/pages/Classes/Content';
 @Component({
   head() {
     return {
@@ -8,29 +8,15 @@ import { Vue, Component } from 'nuxt-property-decorator';
         {
           hid: 'description',
           name: 'description',
-          content: 'Entre em contato'
-        }
-      ]
+          content: 'Entre em contato',
+        },
+      ],
     };
-  }
+  },
 })
-class Contact extends Vue {
-  page: string = 'contact';
-  title: string = '';
-  content: string = '';
-
-  head() {
-    return {
-      title: `Fabricio Nogueira | ${this.title}`
-    };
-  }
-
-  async fetch() {
-    const { html, attributes } = await import(
-      `@/contents/pages/${this.page}.md`
-    );
-    this.title = attributes.title;
-    this.content = html;
+class Contact extends Static {
+  created(): void {
+    this.fetch('contact');
   }
 }
 

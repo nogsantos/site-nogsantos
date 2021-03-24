@@ -1,12 +1,11 @@
 import { Component } from 'nuxt-property-decorator';
 import { Cover } from '@/components/';
 import projects from '~/contents/projects';
-
-import Content from '@/pages/Classes/Content';
+import { Listing } from '@/pages/Classes/Content';
 
 @Component({
   components: {
-    'fn-cover': Cover
+    'fn-cover': Cover,
   },
   head() {
     return {
@@ -15,14 +14,14 @@ import Content from '@/pages/Classes/Content';
         {
           hid: 'description',
           name: 'description',
-          content: 'Projetos e trabalhos em progresso'
-        }
-      ]
+          content: 'Projetos e trabalhos em progresso',
+        },
+      ],
     };
-  }
+  },
 })
-export default class Projects extends Content {
+export default class Projects extends Listing {
   created(): void {
     this.fetch(projects, 'projects');
-  } 
+  }
 }

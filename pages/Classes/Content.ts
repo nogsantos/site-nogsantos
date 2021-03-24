@@ -1,19 +1,3 @@
-import { Vue } from 'nuxt-property-decorator';
-
-export default class Content extends Vue {
-  contents: Array<string> = [];
-  loading: boolean = true;
-
-  async asyncImport(category: string, contentFile: string) {
-    const content = await import(`@/contents/${category}/${contentFile}.md`);
-    return content.attributes;
-  }
-
-  async fetch(items: Array<string>, page: string) {
-    return await Promise.all(
-      items.map((content) => this.asyncImport(page, content))
-    )
-      .then((post) => (this.contents = post))
-      .finally(() => (this.loading = false));
-  }
-}
+export { default as Listing } from './Listing';
+export { default as Static } from './Static';
+export { default as Slug } from './Slug';
