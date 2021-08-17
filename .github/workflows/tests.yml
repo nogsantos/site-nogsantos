@@ -9,14 +9,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build
-
+    name: Tests Stage
     steps:
-      - uses: actions/checkout@master
-
-      - name: Bucket actions
+      - uses: actions/checkout@v2
+      - name: Install and test
         uses: actions/setup-node@v1
         with:
-          node-version: 8
+          node-version: 15
       - run: npm i
       - run: npm run test

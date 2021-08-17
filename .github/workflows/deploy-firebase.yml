@@ -8,7 +8,7 @@ on:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    name: Deploy
+    name: Deploy Stage
     env:
       NUXT_ENV_SENTRY_DNS: ${{ secrets.SENTRY_DNS }}
       NUXT_ENV_SEO_URL: ${{ secrets.SEO_URL }}
@@ -16,8 +16,14 @@ jobs:
       NUXT_ENV_SEO_TWITTER_ACCOUNT: ${{ secrets.SEO_TWITTER_ACCOUNT }}
 
     steps:
-      - uses: actions/checkout@v2
-      - run: npm ci && npm run generate
+      - uses: actions/checkout@master
+      - name: Generate
+        uses: actions/setup-node@v1
+        with:
+          node-version: '15'
+      - run: npm ci
+      - run: npm run generate
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
