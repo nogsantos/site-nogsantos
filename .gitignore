@@ -92,3 +92,5 @@ sw.*
 .history
 
 .vscode
+
+.firebase

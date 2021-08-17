@@ -1,0 +1,28 @@
+name: Surge
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    name: Deploy Surge
+    env:
+      NUXT_ENV_SENTRY_DNS: ${{ secrets.SENTRY_DNS }}
+      NUXT_ENV_SEO_URL: ${{ secrets.SEO_URL }}
+      NUXT_ENV_SEO_TWITTER_IMAGE: ${{ secrets.SEO_TWITTER_IMAGE }}
+      NUXT_ENV_SEO_TWITTER_ACCOUNT: ${{ secrets.SEO_TWITTER_ACCOUNT }}
+
+    steps:
+      - uses: actions/checkout@master
+      - name: Bucket actions
+        uses: actions/setup-node@v1
+        with:
+          node-version: '15'
+      - run: echo $NUXT_ENV_SEO_TWITTER_ACCOUNT
+      - run: npm ci
+      - run: npm run generate
+      - run: npm install -g surge
+      - run: surge ./dist/ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}

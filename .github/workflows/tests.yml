@@ -1,4 +1,4 @@
-name: FeatureCI
+name: Tests
 
 on:
   push:

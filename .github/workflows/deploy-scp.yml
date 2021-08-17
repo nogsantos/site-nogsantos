@@ -1,4 +1,4 @@
-name: MasterCI
+name: SCP
 
 on:
   push:
@@ -6,9 +6,9 @@ on:
       - master
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
-    name: Build and Deploy
+    name: Deploy SCP
     env:
       NUXT_ENV_SENTRY_DNS: ${{ secrets.SENTRY_DNS }}
       NUXT_ENV_SEO_URL: ${{ secrets.SEO_URL }}
@@ -16,18 +16,11 @@ jobs:
       NUXT_ENV_SEO_TWITTER_ACCOUNT: ${{ secrets.SEO_TWITTER_ACCOUNT }}
 
     steps:
-      - uses: actions/checkout@master
-
-      - name: Bucket actions
+      - name: Build
         uses: actions/setup-node@v1
         with:
           node-version: '15'
-      - run: echo $NUXT_ENV_SEO_TWITTER_ACCOUNT
-      - run: npm ci
-      # - run: npm run test
-      - run: npm run generate
-      - run: npm install -g surge
-      - run: surge ./dist/ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+      - run: npm ci && npm run generate
 
       - name: Publish
         uses: nogsantos/ssh-scp-deploy@v1.2.1
