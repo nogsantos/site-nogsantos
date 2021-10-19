@@ -1,12 +1,12 @@
 ---
-slug: 'git log'
+slug: 'git-log'
 title: Git logs
 tags:
-  - GIT
-  - LOGS
-  - Document
+  - Git
+  - Logs
+  - Project documentation
 excerpt: |
-  Gerar e manter o histórico do código com o git log.
+  Como gerar e manter o histórico do código com o git log.
 ---
 
 A documentação do projeto, mantendo um padrão e um bom histórico das mensagens de commit, pode ser gerada com o comando `git log`. Arquivo de mudanças `CHANGELOG`, ou as notas de release `RELEASE NOTES`, podem facilitar bastante a manutenção e rastreabilidade no código.
@@ -127,6 +127,6 @@ Steven Maude (1):
 
 ### Referências
 
-- https://www.git-scm.com/docs/git-log
-- https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/
-- https://github.com/django/django/
+- [https://www.git-scm.com/docs/git-log](https://www.git-scm.com/docs/git-log)
+- [https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/](https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/)
+- [https://github.com/django/django/](https://github.com/django/django/)
