@@ -1,4 +1,5 @@
 export default [
+  'git-log',
   'kubernetes',
   'docker',
   'puppet',
